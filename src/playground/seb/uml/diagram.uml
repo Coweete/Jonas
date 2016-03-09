@@ -2,12 +2,70 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes />
+  <nodes>
+    <node x="196.0" y="178.0">playground.seb.uml.impl.DVD</node>
+    <node x="515.7386363636364" y="558.0">playground.seb.uml.impl.Controller</node>
+    <node x="1.0" y="290.0">playground.seb.uml.impl.Member</node>
+    <node x="0.0" y="457.0">playground.seb.uml.impl.BSTree</node>
+    <node x="485.0" y="178.0">playground.seb.uml.impl.Hashtable</node>
+    <node x="575.0" y="457.0">playground.seb.uml.impl.GUI</node>
+    <node x="250.78409090909088" y="0.0">playground.seb.uml.impl.Media</node>
+    <node x="11.0" y="167.0">playground.seb.uml.impl.ArrayList</node>
+    <node x="343.0" y="178.0">playground.seb.uml.impl.Book</node>
+  </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <edges>
+    <edge source="playground.seb.uml.impl.Controller" target="playground.seb.uml.impl.BSTree">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.BSTree" target="playground.seb.uml.impl.Member">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.Book" target="playground.seb.uml.impl.Media">
+      <point x="0.0" y="-25.5" />
+      <point x="404.0" y="147.0" />
+      <point x="370.1590909090909" y="147.0" />
+      <point x="23.875" y="58.5" />
+    </edge>
+    <edge source="playground.seb.uml.impl.Controller" target="playground.seb.uml.impl.Hashtable">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.Hashtable" target="playground.seb.uml.impl.Media">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.Member" target="playground.seb.uml.impl.ArrayList">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.GUI" target="playground.seb.uml.impl.Controller">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.Controller" target="playground.seb.uml.impl.GUI">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="playground.seb.uml.impl.DVD" target="playground.seb.uml.impl.Media">
+      <point x="0.0" y="-25.5" />
+      <point x="259.5" y="147.0" />
+      <point x="322.4090909090909" y="147.0" />
+      <point x="-23.875" y="58.5" />
+    </edge>
+    <edge source="playground.seb.uml.impl.ArrayList" target="playground.seb.uml.impl.Media">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9320388349514563" x="350.5" y="326.5" />
   <SelectedNodes />
-  <Categories />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
 </Diagram>
 
