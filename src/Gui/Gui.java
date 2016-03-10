@@ -9,7 +9,8 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
- * Created by jonatan Fridsten on 2016-03-10.
+ * @author Jonatan Fridsten, Johnatan Sona, Gustaf Bohlin
+ * This is the class containing all Graphical components
  */
 public class Gui extends JFrame {
     private Controller ctrl;
@@ -17,6 +18,7 @@ public class Gui extends JFrame {
     public Gui(){
 
     }
+
 
     private JPanel basicJPanel(String labelInfo, JTextField textField,JButton button, String borderString) {
         JPanel panel = new JPanel(new BorderLayout());
