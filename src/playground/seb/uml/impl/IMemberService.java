@@ -3,6 +3,8 @@ package playground.seb.uml.impl;
 import collections.BinarySearchTree;
 import collections.List;
 
+import java.io.IOException;
+
 /**
  * Interface for MemberService, places and controls members in a SearchTree
  * @author Sebastian Börebäck
@@ -12,10 +14,9 @@ public interface IMemberService {
 
     /**
      * Reads from file and places data in a BST
-     * @param path the file path to file with members
      * @return Filled out memberTree, with all members added
      **/
-    BinarySearchTree<String, Member> loadMember(String path);
+    void loadMember() throws IOException;
 
     /**
      * Returns a list of all registered members

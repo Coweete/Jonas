@@ -113,7 +113,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void updateMemberServiceFromView() {
-        ctrl.getMemberService().setCurrentUser(currentUser);
+        ctrl.getMemberService().setCurrentUserID(currentUser);
     }
 
     @Override
