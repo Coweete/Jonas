@@ -7,7 +7,6 @@ import java.io.*;
 
 /**
  * Reads a text file and places the nodes in a BinarySearchTree
- *
  * @author Robin Johnsson
  */
 public class MemberService implements IMemberService {
@@ -56,6 +55,18 @@ public class MemberService implements IMemberService {
         return memberTree.values();
     }
 
+	/**
+	 * Checks if the current user is in the the list of registered users
+	 * @return true/false depending if the user exists
+	 **/
+	@Override
+	public boolean userExists() throws NullPointerException {
+		try {
+			return memberTree.contains(currentUserID);
+		} catch (Exception e) {
+			throw new NullPointerException("Null pointer exception on finding member");
+		}
+	}
 
     /**
      * Sets the current user to the input
@@ -67,15 +78,6 @@ public class MemberService implements IMemberService {
         this.currentUserID = currentUser;
     }
 
-    /**
-     * Checks if the current user is in the the list of registered users
-     *
-     * @return true/false depending if the user exists
-     **/
-    @Override
-    public boolean userExists() {
-        return memberTree.contains(currentUserID);
-    }
 
     /**
      * Fetches a specified member through the use of their memberID

@@ -4,8 +4,6 @@ package playground.seb.uml.impl;
  * Created by Sebastian Börebäck on 2016-03-09.
  */
 
-import javax.swing.*;
-
 /***
  * Controller that handles the communication between Model/service and the View
  */
@@ -22,8 +20,6 @@ public class Controller implements IController {
 
 
 	public Controller() {
-
-
 	}
 
 	@Override
@@ -68,11 +64,14 @@ public class Controller implements IController {
 	@Override
 	public void login() {
 		gui.updateMemberServiceFromView();
-		if(memberService.userExists()) {
-			gui.closeLogin();
-			gui.openMainView();
-		}
-		else {
+
+		try {
+			if(memberService.userExists())
+			{
+				gui.closeLogin();
+				gui.openMainView();
+			}
+		} catch (NullPointerException e) {
 			gui.showErrorMessage("Invalid Username");
 			gui.openLogin();
 		}

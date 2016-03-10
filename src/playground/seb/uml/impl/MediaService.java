@@ -1,7 +1,6 @@
 package playground.seb.uml.impl;
 
 import collections.HashTableCH;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.io.*;
 

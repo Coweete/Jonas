@@ -40,4 +40,5 @@ public interface IMemberService {
      * Fetches a specified member through the use of CurrentUserID
      **/
     public Member getCurrentUser();
+
 }
