@@ -3,6 +3,7 @@ package Gui;
 import playground.seb.uml.impl.Controller;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
@@ -34,6 +35,22 @@ public class Gui extends JFrame {
         panel.setBorder(border);
         return panel;
     }
+    public JPanel userPanel(){
+        JPanel userPanel = new JPanel(new BorderLayout());
+        JPanel titlePanel = new JPanel();
+        JPanel infoPanel = new JPanel(new BorderLayout());
+        JTextField tfID = new JTextField(("ctrl.getMemberID"));
+        tfID.setEditable(false);
+        infoPanel.setBorder(new TitledBorder(""));
+        infoPanel.add(new JLabel("PrsNr: "), BorderLayout.WEST);
+        infoPanel.add(tfID, BorderLayout.CENTER);
+        infoPanel.add(new JButton("Gå bak"), BorderLayout.EAST);
+        titlePanel.add(new JLabel("----ANVÄNDARINFORMATION----"));
+        userPanel.add(titlePanel, BorderLayout.NORTH);
+        userPanel.add(infoPanel, BorderLayout.EAST);
+
+        return userPanel;
+    }
 
     public void setCtrl(Controller ctrl){
         this.ctrl = ctrl;
@@ -42,7 +59,7 @@ public class Gui extends JFrame {
     public static void main(String [] args){
         Gui gui = new Gui();
         JFrame frame = new JFrame();
-        frame.add(gui.basicJPanel("cancer", new JTextField(20), new JButton("cancer"), "cancer"));
+        frame.add(gui.userPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.pack();

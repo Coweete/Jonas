@@ -3,6 +3,7 @@ package playground.seb.uml.impl;
 import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -21,9 +22,10 @@ public class GUI extends JPanel implements IGUI{
 		this.ctrl = ctrl;
 	}
 
+
     public static void main(String [] args){
         GUI gui = new GUI();
-        JOptionPane.showMessageDialog(null,gui);
+        JOptionPane.showMessageDialog(null, gui);
     }
 
 	@Override
