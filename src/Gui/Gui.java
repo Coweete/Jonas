@@ -49,6 +49,7 @@ public class Gui extends JFrame {
         userPanel.add(titlePanel, BorderLayout.NORTH);
         userPanel.add(infoPanel, BorderLayout.EAST);
 
+
         return userPanel;
     }
 
