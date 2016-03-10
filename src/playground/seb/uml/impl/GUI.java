@@ -49,17 +49,32 @@ public class GUI extends JPanel implements IGUI{
 	}
 
 	@Override
-	public void open() {
+	public void updateViewFromMediaService() {
 
 	}
 
 	@Override
-	public void close() {
+	public void openLogin() {
+
+	}
+
+	@Override
+	public void closeLogin() {
 
 	}
 
 	@Override
 	public void userRejected() {
+
+	}
+
+	@Override
+	public void openMainView() {
+
+	}
+
+	@Override
+	public void closeMainView() {
 
 	}
 }

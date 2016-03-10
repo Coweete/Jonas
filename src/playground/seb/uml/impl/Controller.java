@@ -58,14 +58,14 @@ public class Controller implements IController {
 //			loginModel.setUser("previousUser");
 //			loginView.setPresenter(this);
 //			loginView.updateViewFromMemberService();
-//			loginView.open();
+//			loginView.openLogin();
 //		}
 //
 //		@Override
 //		public void login() {
 //			loginView.updateMemberServiceFromView();
 //			if (loginModel.getUser().equalsIgnoreCase("root")) {
-//				loginView.close();
+//				loginView.closeLogin();
 //				loginView.setPresenter(null);// for memory sanity.
 //				onLogin.run();
 //			} else {
@@ -111,25 +111,25 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public void setOnLogin(Runnable onLogin) {
-		this.onLogin = onLogin;
-	}
-
-	@Override
 	public void run() {
 		memberService.setCurrentUser("none");
 		this.gui.setController(this);
+
 		this.gui.updateViewFromMemberService();
-		this.gui.open();
+		this.gui.openLogin();
 	}
 
 	@Override
 	public void login() {
 		gui.updateMemberServiceFromView();
-//		if(memberService.)
+		if(memberService.userExists())
+		{
+			gui.closeLogin();
+			gui.openMainView();
+		}
 //		loginView.updateMemberServiceFromView();
 //			if (loginModel.getUser().equalsIgnoreCase("root")) {
-//				loginView.close();
+//				loginView.closeLogin();
 //				loginView.setPresenter(null);// for memory sanity.
 //				onLogin.run();
 //			} else {
@@ -137,8 +137,19 @@ public class Controller implements IController {
 //			}
 	}
 
+
 	@Override
-	public void findMedia() {
+	public void logout() {
+
+	}
+
+	@Override
+	public void borrow(String mediaID) {
+
+	}
+
+	@Override
+	public void returnBook(String mediaID) {
 
 	}
 }

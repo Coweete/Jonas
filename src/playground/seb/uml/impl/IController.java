@@ -12,15 +12,40 @@ public interface IController {
 
 	void setMediaService(MediaService mediaService);
 
+	/**
+	 * Get current view
+	 * @return the current view
+	 */
 	IGUI getView();
 
+	/**
+	 * Set view
+	 * @param gui
+	 */
 	void setView(IGUI gui);
 
-	void setOnLogin(Runnable onLogin);
-
+	/**
+	 * Run the app
+	 */
 	void run();
 
+	/**
+	 * Login user
+	 */
 	void login();
 
-	void findMedia();
+	/**
+	 * Logout current User
+	 */
+	void logout();
+
+	/**
+	 * Borrow book
+	 */
+	void borrow(String mediaID);
+
+	/**
+	 * Return book
+	 */
+	void returnBook(String mediaID);
 }
