@@ -1,4 +1,4 @@
-package playground.seb.uml.impl;
+package collections;
 
 import java.util.Iterator;
 import collections.ArrayList;

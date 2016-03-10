@@ -2,6 +2,8 @@ package Gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by jonatan Fridsten on 2016-03-10.
@@ -34,6 +36,20 @@ public class LoginScreen extends JPanel{
 
         add(panelCenter,BorderLayout.CENTER);
 
+    }
+
+    private class ButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            if(e.getSource() == btnLogin){
+
+            }
+            if(e.getSource() == btnQuit){
+
+            }
+        }
     }
     public static void main(String [] args){
         LoginScreen lg = new LoginScreen();
