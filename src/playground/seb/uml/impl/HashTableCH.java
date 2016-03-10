@@ -137,9 +137,4 @@ public class HashTableCH<K,V> {
         }
         return values.iterator();
     }
-
-    public void readMedia() {
-        String line;
-        String[] object = new String[5];
-    }
 }

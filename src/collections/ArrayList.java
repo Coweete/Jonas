@@ -238,15 +238,4 @@ public class ArrayList<E> implements List<E> {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
-	public static void main(String[] args) {
-		ArrayList<Integer> list = new ArrayList<Integer>(10);
-		for(int i=10; i<100; i+=10) {
-			list.add(i);
-		}
-		System.out.println(list);
-		Iterator<Integer> numbers = list.iterator();
-		while(numbers.hasNext())
-			System.out.print(numbers.next()+ " ");
-	}
 }
