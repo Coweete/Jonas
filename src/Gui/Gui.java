@@ -24,7 +24,7 @@ public class Gui extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
         JPanel panel1 = new JPanel();
         JLabel label = new JLabel(labelInfo);
-        EmptyBorder padding = new EmptyBorder(5, 5, 5, 5);//detta e cancer
+        EmptyBorder padding = new EmptyBorder(5, 5, 5, 5);
         label.setBorder(padding);
         textField.setBorder(padding);
         panel1.add(button);
@@ -36,6 +36,23 @@ public class Gui extends JFrame {
         panel.setBorder(border);
         return panel;
     }
+    public JPanel panelList(JTextArea txtList){
+        JPanel panel = new JPanel();
+        JLabel lblText = new JLabel("Lånde objekt: ");
+        JScrollPane spText = new JScrollPane(txtList);
+        spText.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        panel.setLayout(new BorderLayout());
+        TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.black), "Lista Lånad Media");
+        panel.setBorder(border);
+        panel.add(lblText,BorderLayout.WEST);
+        panel.add(spText,BorderLayout.CENTER);
+        return panel;
+    }
+
+    public String login (){
+        String txt = JOptionPane.showInputDialog(null,"Skriv in ditt personnummer");
+        return txt;
+    }
 
     public void setCtrl(Controller ctrl){
         this.ctrl = ctrl;
@@ -44,7 +61,8 @@ public class Gui extends JFrame {
     public static void main(String [] args){
         Gui gui = new Gui();
         JFrame frame = new JFrame();
-        frame.add(gui.basicJPanel("cancer", new JTextField(20), new JButton("cancer"), "cancer"));
+        String txt = "iahfuahfuhwfhwhfiqwhriqhwifhqwirhiqwhfiwqriqwhrqiwhrwhq";
+        frame.add(gui.panelList(new JTextArea("txt")));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.pack();
