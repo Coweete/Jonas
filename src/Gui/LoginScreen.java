@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by jonatan Fridsten on 2016-03-10.
  */
-public class LoginScreen extends JFrame{
+public class LoginScreen extends JPanel{
     private JPanel panelCenter = new JPanel();
     private JPanel panelButton = new JPanel();
     private JButton btnLogin = new JButton("Login");
@@ -53,6 +53,7 @@ public class LoginScreen extends JFrame{
     }
     public static void main(String [] args){
         LoginScreen lg = new LoginScreen();
-        JOptionPane.showMessageDialog(null,lg);
+        JOptionPane.showInputDialog(null, "vgd");
+        //JOptionPane.showMessageDialog(null,lg);
     }
 }

@@ -3,18 +3,15 @@ package Gui;
 import playground.seb.uml.impl.Controller;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by jonatan Fridsten on 2016-03-10.
  */
-public class Gui extends JFrame implements ActionListener {
+public class Gui extends JFrame {
     private Controller ctrl;
 
     public Gui(){
@@ -23,36 +20,19 @@ public class Gui extends JFrame implements ActionListener {
 
     private JPanel basicJPanel(String labelInfo, JTextField textField,JButton button, String borderString) {
         JPanel panel = new JPanel(new BorderLayout());
-        JPanel panelButton = new JPanel();
-        JPanel panelLabel = new JPanel();
+        JPanel panel1 = new JPanel();
         JLabel label = new JLabel(labelInfo);
-        panelButton.add(button);
-        panelLabel.add(label);
-
+        EmptyBorder padding = new EmptyBorder(5, 5, 5, 5);//detta e cancer
+        label.setBorder(padding);
+        textField.setBorder(padding);
+        panel1.add(button);
+        button.setBorder(padding);
         TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.BLACK), borderString);
-        panel.add(panelLabel, BorderLayout.WEST);
+        panel.add(label, BorderLayout.WEST);
         panel.add(textField, BorderLayout.CENTER);
-        panel.add(panelButton, BorderLayout.EAST);
+        panel.add(panel1, BorderLayout.EAST);
         panel.setBorder(border);
         return panel;
-    }
-
-    public JPanel userPanel(){
-        JPanel userPanel = new JPanel(new BorderLayout());
-        JPanel titlePanel = new JPanel();
-        JPanel infoPanel = new JPanel(new BorderLayout());
-        JTextField tfID = new JTextField(("ctrl.getMemberID"));
-        tfID.setEditable(false);
-        infoPanel.setBorder(new TitledBorder(""));
-        infoPanel.add(new JLabel("PrsNr: "), BorderLayout.WEST);
-        infoPanel.add(tfID, BorderLayout.CENTER);
-        infoPanel.add(new JButton("Gå bak"), BorderLayout.EAST);
-        titlePanel.add(new JLabel("----ANVÄNDARINFORMATION----"));
-        userPanel.add(titlePanel, BorderLayout.NORTH);
-        userPanel.add(infoPanel, BorderLayout.EAST);
-
-
-        return userPanel;
     }
 
     public void setCtrl(Controller ctrl){
@@ -62,22 +42,9 @@ public class Gui extends JFrame implements ActionListener {
     public static void main(String [] args){
         Gui gui = new Gui();
         JFrame frame = new JFrame();
-        frame.add(gui.userPanel());
+        frame.add(gui.basicJPanel("cancer", new JTextField(20), new JButton("cancer"), "cancer"));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.pack();
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {    //bara byta ut e mot knappens riktiga namn
-        if(e.getSource() == e) {        //byta login
-            ctrl.login();
-        }
-        else if(e.getSource() == e) {   //låna
-            ctrl.borrow(textFieldBorrow.getText());
-        }
-        else if(e.getSource() == e) {   //lämna tillbaka
-            ctrl.returnBook(textFieldBorrow.getText();
-        }
     }
 }
