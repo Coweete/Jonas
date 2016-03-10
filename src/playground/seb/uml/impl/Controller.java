@@ -76,16 +76,22 @@ public class Controller implements IController {
 
 	@Override
 	public void logout() {
-
+		memberService.setCurrentUser("none");
+		gui.closeMainView();
+		gui.openLogin();
 	}
 
 	@Override
 	public void borrow(String mediaID) {
-
+		Media media = mediaService.getMedia(mediaID);
+		memberService.getCurrentUser().loanMedia(media);
+		this.gui.updateViewFromMemberService();
 	}
 
 	@Override
 	public void returnBook(String mediaID) {
-
+		Media media = mediaService.getMedia(mediaID);
+		memberService.getCurrentUser().returnMedia(media);
+		this.gui.updateViewFromMemberService();
 	}
 }

@@ -48,4 +48,8 @@ public class MediaService {
 
 		return table;
 	}
+
+	public Media getMedia(String mediaID) {
+		return this.table.get(mediaID);
+	}
 }

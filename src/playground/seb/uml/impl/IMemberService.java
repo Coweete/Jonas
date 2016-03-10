@@ -40,4 +40,6 @@ public interface IMemberService {
      * @return true/false depending if the user exists
      **/
     boolean userExists();
+
+    Member getCurrentUser();
 }
