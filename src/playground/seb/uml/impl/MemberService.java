@@ -18,6 +18,7 @@ public class MemberService implements IMemberService{
 	 * @param path filepath to file with members
 	 * @return Filled out memberTree, with all members added
 	 **/
+	@Override
 	public BinarySearchTree<String, Member> loadMember(String path) {
 		memberTree = new BinarySearchTree<>();
 		try {
@@ -45,6 +46,7 @@ public class MemberService implements IMemberService{
 	 * Returns a list of all registered members
 	 * @return List of members
 	 **/
+	@Override
 	public List<Member> getMembers(){
 		return memberTree.values();
 	}
@@ -53,14 +55,25 @@ public class MemberService implements IMemberService{
 	 * Fetches a specefied member through the use of their memberID
 	 * @param key the memberID of the member to be fetched
 	 **/
+	@Override
 	public Member getMember(String key){
 		return memberTree.get(key);
 	}
 
+	/**
+	 * Sets the current user to the input
+	 * @param currentUser the user to be the current one
+	 **/
 	@Override
 	public void setCurrentUser(String currentUser) {
 		this.currentUser=currentUser;
 	}
+
+	/**
+	 * Checks if the current user is in the the list of registered users
+	 * @return true/false depending if the user exists
+	 **/
+	@Override
 	public boolean userExists(){
 		return memberTree.contains(currentUser);
 	}
