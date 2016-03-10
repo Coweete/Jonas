@@ -56,7 +56,7 @@ public class Controller implements IController {
 
 	@Override
 	public void run() {
-		memberService.setCurrentUser("none");
+		memberService.setCurrentUserID("none");
 		this.gui.setController(this);
 
 		this.gui.updateViewFromMemberService();
@@ -76,7 +76,7 @@ public class Controller implements IController {
 
 	@Override
 	public void logout() {
-		memberService.setCurrentUser("none");
+		memberService.setCurrentUserID("none");
 		gui.closeMainView();
 		gui.openLogin();
 	}
