@@ -4,6 +4,8 @@ package playground.seb.uml.impl;
  * Created by Sebastian Börebäck on 2016-03-09.
  */
 
+import java.io.IOException;
+
 /***
  * Controller that handles the communication between Model/service and the View
  */
@@ -20,6 +22,14 @@ public class Controller implements IController {
 
 
 	public Controller() {
+
+		try {
+			this.mediaService.loadMedia();
+			this.memberService.loadMember();
+		} catch (IOException e) {
+			gui.showErrorMessage("Failed load media and members");
+		}
+
 	}
 
 	@Override
