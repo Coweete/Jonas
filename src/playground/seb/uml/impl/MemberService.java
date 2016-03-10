@@ -1,6 +1,7 @@
 package playground.seb.uml.impl;
 
 import collections.BinarySearchTree;
+import collections.List;
 
 import java.io.*;
 
@@ -39,6 +40,18 @@ public class MemberService {
 		return memberTree;
 	}
 
+	/**
+	 * Returns a list of all registered members
+	 * @return List of members
+	 **/
+	public List<Member> getMembers(){
+		return memberTree.values();
+	}
 
-
+	/**
+	 *
+	 **/
+	public Member getMember(String key){
+		return memberTree.get(key);
+	}
 }
