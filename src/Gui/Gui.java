@@ -38,6 +38,18 @@ public class Gui extends JFrame implements ActionListener {
         panel.setBorder(border);
         return panel;
     }
+    public JPanel panelList(JTextArea txtList){
+        JPanel panel = new JPanel();
+        JLabel lblText = new JLabel("Lånde objekt: ");
+        JScrollPane spText = new JScrollPane(txtList);
+        spText.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        panel.setLayout(new BorderLayout());
+        TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.black), "Lista Lånad Media");
+        panel.setBorder(border);
+        panel.add(lblText,BorderLayout.WEST);
+        panel.add(spText,BorderLayout.CENTER);
+        return panel;
+    }
 
     public JPanel userPanel(){
         JPanel userPanel = new JPanel(new BorderLayout());
