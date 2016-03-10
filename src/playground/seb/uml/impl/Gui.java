@@ -1,16 +1,8 @@
-package Gui;
+package playground.seb.uml.impl;
 
 import collections.ArrayList;
-import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
-import playground.seb.uml.impl.Controller;
-import playground.seb.uml.impl.IController;
-import playground.seb.uml.impl.IGUI;
-import playground.seb.uml.impl.Media;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;

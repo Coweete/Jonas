@@ -68,7 +68,6 @@ public class Controller implements IController {
 		memberService.setCurrentUserID("none");
 		this.gui.setController(this);
 
-		this.gui.updateViewFromMemberService();
 		this.gui.openLogin();
 	}
 
@@ -80,6 +79,7 @@ public class Controller implements IController {
 			if(memberService.userExists())
 			{
 				gui.closeLogin();
+				this.gui.updateViewFromMemberService();
 				gui.openMainView();
 			}
 			else {
