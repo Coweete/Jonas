@@ -10,7 +10,7 @@ package playground.seb.uml.impl;
 public class Controller implements IController {
 	private IGUI gui;
 	private MediaService mediaService;
-	private MemberService memberService;
+	private IMemberService memberService;
 	private Runnable onLogin;
 
 	/*
@@ -81,7 +81,7 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public MemberService getMemberService() {
+	public IMemberService getMemberService() {
 		return this.memberService;
 	}
 

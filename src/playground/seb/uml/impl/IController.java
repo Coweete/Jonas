@@ -5,7 +5,7 @@ package playground.seb.uml.impl;
  */
 public interface IController {
 
-	MemberService getMemberService();
+	IMemberService getMemberService();
 	MediaService getMediaService();
 
 	void setMemberService(IMemberService memberService);

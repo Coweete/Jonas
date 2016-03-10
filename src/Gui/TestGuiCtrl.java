@@ -7,7 +7,7 @@ import playground.seb.uml.impl.*;
  */
 public class TestGuiCtrl implements IController {
     @Override
-    public MemberService getMemberService() {
+    public IMemberService getMemberService() {
         return null;
     }
 
