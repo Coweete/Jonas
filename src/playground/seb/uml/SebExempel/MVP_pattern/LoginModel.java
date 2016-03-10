@@ -1,9 +1,9 @@
-/*
+package playground.seb.uml.SebExempel.MVP_pattern;/*
  * Author: Sebastian Börebäck
  * Copyright (c) 2016.
  */
 
-package Playground.MVP_pattern;
+
 
 /**
  * Created by Sebastian Börebäck on 2016-03-08.
