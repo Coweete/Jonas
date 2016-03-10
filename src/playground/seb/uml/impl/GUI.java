@@ -69,6 +69,11 @@ public class GUI extends JPanel implements IGUI{
 	}
 
 	@Override
+	public void showErrorMessage(String error) {
+
+	}
+
+	@Override
 	public void openMainView() {
 
 	}

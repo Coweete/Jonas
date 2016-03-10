@@ -5,6 +5,7 @@ package playground.seb.uml.impl;
  */
 
 import javax.swing.*;
+import Gui.Gui;
 
 /**
  * Main class for creating the MediaBiblotek App.
@@ -22,15 +23,8 @@ public class AppMain {
 				controller.setMediaService(mediaService);
 				controller.setMemberService(memberService);
 
-				IGUI gui = new GUI();
+				IGUI gui = new Gui();
 				controller.setView(gui);
-
-				controller.setOnLogin(new Runnable() {
-					@Override
-					public void run() {
-						JOptionPane.showMessageDialog(null, "Welcome user!");
-					}
-				});
 
 				controller.run();
 

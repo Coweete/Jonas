@@ -33,7 +33,7 @@ public interface IMemberService {
      * Checks if the current user is in the the list of registered users
      * @return true/false depending if the user exists
      **/
-    boolean userExists();
+    boolean userExists() throws NullPointerException;
 
     /**
      * Fetches a specified member through the use of CurrentUserID

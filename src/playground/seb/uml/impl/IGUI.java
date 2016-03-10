@@ -56,4 +56,5 @@ public interface IGUI {
 	 */
 	void userRejected();
 
+	void showErrorMessage(String error);
 }
