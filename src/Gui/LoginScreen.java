@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by jonatan Fridsten on 2016-03-10.
  */
-public class LoginScreen extends JPanel{
+public class LoginScreen extends JFrame{
     private JPanel panelCenter = new JPanel();
     private JPanel panelButton = new JPanel();
     private JButton btnLogin = new JButton("Login");
@@ -44,7 +44,7 @@ public class LoginScreen extends JPanel{
         public void actionPerformed(ActionEvent e) {
 
             if(e.getSource() == btnLogin){
-
+               // ctrl.login()
             }
             if(e.getSource() == btnQuit){
 

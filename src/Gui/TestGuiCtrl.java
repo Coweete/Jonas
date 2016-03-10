@@ -1,9 +1,6 @@
 package Gui;
 
-import playground.seb.uml.impl.GUI;
-import playground.seb.uml.impl.IController;
-import playground.seb.uml.impl.MediaService;
-import playground.seb.uml.impl.MemberService;
+import playground.seb.uml.impl.*;
 
 /**
  * Created by jonatan on 2016-03-10.
@@ -35,9 +32,11 @@ public class TestGuiCtrl implements IController {
     }
 
     @Override
-    public void setView(GUI gui) {
+    public void setView(IGUI gui) {
 
     }
+
+
 
     @Override
     public void run() {

@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * Created by jonatan Fridsten on 2016-03-10.
  */
-public class Gui extends JPanel {
+public class Gui extends JFrame {
     private Controller ctrl;
 
     public Gui(){
