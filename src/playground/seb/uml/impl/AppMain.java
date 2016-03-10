@@ -4,9 +4,7 @@ package playground.seb.uml.impl;
  * Created by seb on 2016-03-10.
  */
 
-import javax.swing.*;
 import Gui.Gui;
-import sun.net.ResourceManager;
 
 /**
  * Main class for creating the MediaBiblotek App.
@@ -17,8 +15,8 @@ public class AppMain {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
 			public void run() {
-				MediaService mediaService = new MediaService("Media.txt");
-				IMemberService memberService = new MemberService("Lantagare.txt");
+				MediaService mediaService = new MediaService("files/Media.txt");
+				IMemberService memberService = new MemberService("files/Lantagare.txt");
 
 				Controller controller = new Controller();
 				controller.setMediaService(mediaService);

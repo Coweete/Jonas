@@ -23,12 +23,7 @@ public class Controller implements IController {
 
 	public Controller() {
 
-		try {
-			this.mediaService.loadMedia();
-			this.memberService.loadMember();
-		} catch (IOException e) {
-			gui.showErrorMessage("Failed load media and members");
-		}
+
 
 	}
 
@@ -64,6 +59,12 @@ public class Controller implements IController {
 
 	@Override
 	public void run() {
+		try {
+			this.mediaService.loadMedia();
+			this.memberService.loadMember();
+		} catch (IOException e) {
+			gui.showErrorMessage("Failed load media and members");
+		}
 		memberService.setCurrentUserID("none");
 		this.gui.setController(this);
 

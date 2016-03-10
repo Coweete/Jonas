@@ -13,11 +13,13 @@ public class MediaService {
     private String path;
 
     public MediaService(String path) {
-        this.path = this.getClass().getResource("/" + path).getPath();
+	    this.path = this.getClass().getResource("/"+ path).getPath();
+
+
     }
 
     public void loadMedia() throws IOException {
-        loadMedia(path);
+	    loadMedia(path);
     }
 
     /**
