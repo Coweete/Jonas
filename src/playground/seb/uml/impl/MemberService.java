@@ -11,7 +11,7 @@ import java.io.*;
  */
 public class MemberService implements IMemberService{
 	private BinarySearchTree<String,Member> memberTree;
-	private String currentUser;
+	private String currentUserID;
 
 	/**
 	 * Reads from file and places data in a BST
@@ -51,22 +51,14 @@ public class MemberService implements IMemberService{
 		return memberTree.values();
 	}
 
-	/**
-	 * Fetches a specified member through the use of their memberID
-	 * @param key the memberID of the member to be fetched
-	 **/
-	@Override
-	public Member getMember(String key){
-		return memberTree.get(key);
-	}
 
 	/**
 	 * Sets the current user to the input
 	 * @param currentUser the user to be the current one
 	 **/
 	@Override
-	public void setCurrentUser(String currentUser) {
-		this.currentUser=currentUser;
+	public void setCurrentUserID(String currentUser) {
+		this.currentUserID=currentUser;
 	}
 
 	/**
@@ -75,7 +67,15 @@ public class MemberService implements IMemberService{
 	 **/
 	@Override
 	public boolean userExists(){
-		return memberTree.contains(currentUser);
+		return memberTree.contains(currentUserID);
+	}
+
+	/**
+	 * Fetches a specified member through the use of their memberID
+	 **/
+	@Override
+	public Member getCurrentUser() {
+		return this.memberTree.get(currentUserID);
 	}
 
 }

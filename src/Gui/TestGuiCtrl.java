@@ -36,11 +36,6 @@ public class TestGuiCtrl implements IController {
 
     }
 
-    @Override
-    public void setOnLogin(Runnable onLogin) {
-
-    }
-
 
     @Override
     public void run() {
@@ -53,7 +48,17 @@ public class TestGuiCtrl implements IController {
     }
 
     @Override
-    public void findMedia() {
+    public void logout() {
+
+    }
+
+    @Override
+    public void borrow(String mediaID) {
+
+    }
+
+    @Override
+    public void returnBook(String mediaID) {
 
     }
 }

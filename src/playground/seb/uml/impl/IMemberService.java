@@ -24,16 +24,10 @@ public interface IMemberService {
     List<Member> getMembers();
 
     /**
-     * Fetches a specified member through the use of their memberID
-     * @param key the memberID of the member to be fetched
-     **/
-    Member getMember(String key);
-
-    /**
      * Sets the current user to the input
      * @param currentUser the user to be the current one
      **/
-	void setCurrentUser(String currentUser);
+	void setCurrentUserID(String currentUser);
 
     /**
      * Checks if the current user is in the the list of registered users
@@ -41,5 +35,8 @@ public interface IMemberService {
      **/
     boolean userExists();
 
-    Member getCurrentUser();
+    /**
+     * Fetches a specified member through the use of CurrentUserID
+     **/
+    public Member getCurrentUser();
 }
