@@ -12,22 +12,22 @@ public interface IMemberService {
 
     /**
      * Reads from file and places data in a BST
-     * @param path filepath to file with members
+     * @param path the file path to file with members
      * @return Filled out memberTree, with all members added
      **/
-    public BinarySearchTree<String, Member> loadMember(String path);
+    BinarySearchTree<String, Member> loadMember(String path);
 
     /**
      * Returns a list of all registered members
      * @return List of members
      **/
-    public List<Member> getMembers();
+    List<Member> getMembers();
 
     /**
-     * Fetches a specefied member through the use of their memberID
+     * Fetches a specified member through the use of their memberID
      * @param key the memberID of the member to be fetched
      **/
-    public Member getMember(String key);
+    Member getMember(String key);
 
     /**
      * Sets the current user to the input
@@ -39,5 +39,5 @@ public interface IMemberService {
      * Checks if the current user is in the the list of registered users
      * @return true/false depending if the user exists
      **/
-    public boolean userExists();
+    boolean userExists();
 }

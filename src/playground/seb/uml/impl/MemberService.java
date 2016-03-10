@@ -15,7 +15,7 @@ public class MemberService implements IMemberService{
 
 	/**
 	 * Reads from file and places data in a BST
-	 * @param path filepath to file with members
+	 * @param path file path to file with members
 	 * @return Filled out memberTree, with all members added
 	 **/
 	@Override
@@ -52,7 +52,7 @@ public class MemberService implements IMemberService{
 	}
 
 	/**
-	 * Fetches a specefied member through the use of their memberID
+	 * Fetches a specified member through the use of their memberID
 	 * @param key the memberID of the member to be fetched
 	 **/
 	@Override
