@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Created by Jonatan Fridsten on 2016-03-10.
  */
-public class GUI extends JPanel{
+public class GUI extends JPanel implements IGUI{
 	private Controller ctrl;
 	private JPanel panel = new JPanel();
 

@@ -16,7 +16,7 @@ public class AppMain {
 				MediaService mediaService = new MediaService();
 				MemberService memberService = new MemberService();
 				Controller controller = new Controller();
-//				IGUI gui = new GUI();
+				IGUI gui = new GUI();
 
 				controller.setMediaService(mediaService);
 				controller.setMemberService(memberService);
