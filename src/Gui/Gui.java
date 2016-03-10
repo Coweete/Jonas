@@ -22,7 +22,7 @@ public class Gui extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
         JPanel panel1 = new JPanel();
         JLabel label = new JLabel(labelInfo);
-        EmptyBorder padding = new EmptyBorder(5, 5, 5, 5);
+        EmptyBorder padding = new EmptyBorder(5, 5, 5, 5);//detta e cancer
         label.setBorder(padding);
         textField.setBorder(padding);
         panel1.add(button);
