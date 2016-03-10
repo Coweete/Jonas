@@ -5,11 +5,17 @@ import collections.HashTableCH;
 import java.io.*;
 
 /**
- * Created by seb on 2016-03-10.
+ * @author Gustaf Bohlin
+ * This class reads the Media objects from a text file and fills a Hashtable with them
  */
 public class MediaService {
 	private HashTableCH<String, Media> table;
 
+	/**
+	 * Loads a HashTableCH with media objects read from the file path
+	 * @param path path to the file containing all media objects
+	 * @return A HashTableCH containing all Media objects
+     */
 	public HashTableCH<String, Media> loadMedia(String path) {
 		String line;
 		String[] object;
