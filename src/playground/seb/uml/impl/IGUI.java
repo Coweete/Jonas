@@ -10,9 +10,9 @@ public interface IGUI {
 
 	void setController(IController controller);
 
-	void updateModelFromView();
+	void updateMemberServiceFromView();
 
-	void updateViewFromModel();
+	void updateViewFromMemberService();
 
 	void open();
 

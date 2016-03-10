@@ -37,12 +37,12 @@ public class GUI extends JPanel implements IGUI{
 	}
 
 	@Override
-	public void updateModelFromView() {
+	public void updateMemberServiceFromView() {
 
 	}
 
 	@Override
-	public void updateViewFromModel() {
+	public void updateViewFromMemberService() {
 
 	}
 

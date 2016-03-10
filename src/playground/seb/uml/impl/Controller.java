@@ -57,13 +57,13 @@ public class Controller implements IController {
 //		public void run() {
 //			loginModel.setUser("previousUser");
 //			loginView.setPresenter(this);
-//			loginView.updateViewFromModel();
+//			loginView.updateViewFromMemberService();
 //			loginView.open();
 //		}
 //
 //		@Override
 //		public void login() {
-//			loginView.updateModelFromView();
+//			loginView.updateMemberServiceFromView();
 //			if (loginModel.getUser().equalsIgnoreCase("root")) {
 //				loginView.close();
 //				loginView.setPresenter(null);// for memory sanity.
@@ -117,16 +117,24 @@ public class Controller implements IController {
 
 	@Override
 	public void run() {
-
-		//			loginModel.setUser("previousUser");
-//			loginView.setPresenter(this);
-//			loginView.updateViewFromModel();
-//			loginView.open();
+		memberService.setCurrentUser("none");
+		this.gui.setController(this);
+		this.gui.updateViewFromMemberService();
+		this.gui.open();
 	}
 
 	@Override
 	public void login() {
-
+		gui.updateMemberServiceFromView();
+//		if(memberService.)
+//		loginView.updateMemberServiceFromView();
+//			if (loginModel.getUser().equalsIgnoreCase("root")) {
+//				loginView.close();
+//				loginView.setPresenter(null);// for memory sanity.
+//				onLogin.run();
+//			} else {
+//				loginView.userRejected();
+//			}
 	}
 
 	@Override
