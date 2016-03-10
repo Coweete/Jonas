@@ -22,7 +22,7 @@ public class AppMain {
 				controller.setMediaService(mediaService);
 				controller.setMemberService(memberService);
 
-
+//				gui.
 
 //				LoginModel loginModel = new MyLoginModel();
 //				LoginPresenter loginPresenter = new MyLoginPresenter();
