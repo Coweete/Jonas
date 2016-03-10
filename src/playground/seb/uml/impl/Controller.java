@@ -7,10 +7,73 @@ package playground.seb.uml.impl;
 /***
  * Controller that handles the communication between Model/service and the View
  */
-public class Controller implements IController{
-	private GUI gui;
+public class Controller implements IController {
+	private IGUI gui;
 	private MediaService mediaService;
 	private MemberService memberService;
+	private Runnable onLogin;
+
+	/*
+ * Author: Sebastian Börebäck
+ * Copyright (c) 2016.
+ */
+//
+//	package playground.seb.uml.SebExempel.MVP_pattern;/*
+//
+///**
+// * Created by Sebastian Börebäck on 2016-03-08.
+// */
+//	public class MyLoginPresenter implements LoginPresenter{
+//		LoginModel loginModel;
+//		LoginView loginView;
+//		private Runnable onLogin;
+//
+//		@Override
+//		public LoginModel getModel() {
+//			return loginModel;
+//		}
+//
+//		@Override
+//		public void setModel(LoginModel loginModel) {
+//			this.loginModel = loginModel;
+//		}
+//
+//		@Override
+//		public LoginView getView() {
+//			return loginView;
+//		}
+//
+//		@Override
+//		public void setView(LoginView loginView) {
+//			this.loginView = loginView;
+//		}
+//
+//		@Override
+//		public void setOnLogin(Runnable onLogin) {
+//			this.onLogin = onLogin;
+//		}
+//
+//		@Override
+//		public void run() {
+//			loginModel.setUser("previousUser");
+//			loginView.setPresenter(this);
+//			loginView.updateViewFromModel();
+//			loginView.open();
+//		}
+//
+//		@Override
+//		public void login() {
+//			loginView.updateModelFromView();
+//			if (loginModel.getUser().equalsIgnoreCase("root")) {
+//				loginView.close();
+//				loginView.setPresenter(null);// for memory sanity.
+//				onLogin.run();
+//			} else {
+//				loginView.userRejected();
+//			}
+//		}
+//	}
+
 
 	public Controller() {
 
@@ -19,37 +82,46 @@ public class Controller implements IController{
 
 	@Override
 	public MemberService getMemberService() {
-		return null;
+		return this.memberService;
 	}
 
 	@Override
 	public MediaService getMediaService() {
-		return null;
+		return this.mediaService;
 	}
 
 	@Override
-	public void setMemberService(MemberService memberService) {
-
+	public void setMemberService(IMemberService memberService) {
+		this.memberService = memberService;
 	}
 
 	@Override
 	public void setMediaService(MediaService mediaService) {
-
+		this.mediaService = mediaService;
 	}
 
 	@Override
-	public GUI getView() {
-		return null;
+	public IGUI getView() {
+		return gui;
 	}
 
 	@Override
 	public void setView(IGUI gui) {
+		this.gui = gui;
+	}
 
+	@Override
+	public void setOnLogin(Runnable onLogin) {
+		this.onLogin = onLogin;
 	}
 
 	@Override
 	public void run() {
 
+		//			loginModel.setUser("previousUser");
+//			loginView.setPresenter(this);
+//			loginView.updateViewFromModel();
+//			loginView.open();
 	}
 
 	@Override

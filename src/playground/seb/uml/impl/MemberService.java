@@ -9,7 +9,7 @@ import java.io.*;
  * Reads a text file and places the nodes in a BinarySearchTree
  * @author Robin Johnsson
  */
-public class MemberService {
+public class MemberService implements IMemberService{
 	private BinarySearchTree<String,Member> memberTree;
 
 	/**

@@ -17,7 +17,7 @@ public class TestGuiCtrl implements IController {
     }
 
     @Override
-    public void setMemberService(MemberService memberService) {
+    public void setMemberService(IMemberService memberService) {
 
     }
 
@@ -36,6 +36,10 @@ public class TestGuiCtrl implements IController {
 
     }
 
+    @Override
+    public void setOnLogin(Runnable onLogin) {
+
+    }
 
 
     @Override

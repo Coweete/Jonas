@@ -8,15 +8,15 @@ public interface IController {
 	MemberService getMemberService();
 	MediaService getMediaService();
 
-	void setMemberService(MemberService memberService);
+	void setMemberService(IMemberService memberService);
 
 	void setMediaService(MediaService mediaService);
 
-	GUI getView();
+	IGUI getView();
 
 	void setView(IGUI gui);
 
-//	void setOnLogin(Runnable onLogin);
+	void setOnLogin(Runnable onLogin);
 
 	void run();
 
