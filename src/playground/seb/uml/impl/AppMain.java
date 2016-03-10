@@ -17,9 +17,11 @@ public class AppMain {
 				MemberService memberService = new MemberService();
 				Controller controller = new Controller();
 				IGUI gui = new GUI();
+				controller.setView(gui);
 
 				controller.setMediaService(mediaService);
 				controller.setMemberService(memberService);
+
 
 
 //				LoginModel loginModel = new MyLoginModel();

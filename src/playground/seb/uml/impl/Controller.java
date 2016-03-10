@@ -43,7 +43,7 @@ public class Controller implements IController{
 	}
 
 	@Override
-	public void setView(GUI gui) {
+	public void setView(IGUI gui) {
 
 	}
 

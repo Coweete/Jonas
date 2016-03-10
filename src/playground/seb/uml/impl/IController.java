@@ -14,7 +14,7 @@ public interface IController {
 
 	GUI getView();
 
-	void setView(GUI gui);
+	void setView(IGUI gui);
 
 //	void setOnLogin(Runnable onLogin);
 
