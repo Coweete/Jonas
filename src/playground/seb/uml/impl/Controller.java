@@ -5,6 +5,6 @@ package playground.seb.uml.impl;
  */
 public class Controller {
 	private GUI gui;
-	private Hashtable mediaTable;
-	private BSTree memberTree;
+	private MediaService mediaService;
+	private MemberService memberService;
 }
