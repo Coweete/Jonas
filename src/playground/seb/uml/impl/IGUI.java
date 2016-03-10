@@ -8,15 +8,52 @@ import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
 public interface IGUI {
 	LoginPresenter getController();
 
+	/**
+	 * Set current controller
+	 * @param controller the controller for the view
+	 */
 	void setController(IController controller);
 
+	/**
+	 * Update the MemberService with the current login member
+	 * from View
+	 */
 	void updateMemberServiceFromView();
 
+	/**
+	 * Update the view from the MemberService.
+	 * Who logged in.
+	 */
 	void updateViewFromMemberService();
 
-	void open();
+	/**
+	 * Update the MediaService from the View
+	 */
+	void updateViewFromMediaService();
 
-	void close();
+	/**
+	 * Open the View
+	 */
+	void openLogin();
 
+	/**
+	 * Close the view
+	 */
+	void closeLogin();
+
+	/**
+	 * open MainView
+	 */
+	void openMainView();
+
+	/**
+	 * Close MainView
+	 */
+	void closeMainView();
+
+	/**
+	 * Failed to login
+	 */
 	void userRejected();
+
 }
