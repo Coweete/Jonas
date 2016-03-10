@@ -29,11 +29,6 @@ public class GUI extends JPanel implements IGUI{
     }
 
 	@Override
-	public LoginPresenter getController() {
-		return null;
-	}
-
-	@Override
 	public void setController(IController controller) {
 
 	}
@@ -60,11 +55,6 @@ public class GUI extends JPanel implements IGUI{
 
 	@Override
 	public void closeLogin() {
-
-	}
-
-	@Override
-	public void userRejected() {
 
 	}
 

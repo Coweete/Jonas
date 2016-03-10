@@ -82,8 +82,12 @@ public class Controller implements IController {
 				gui.closeLogin();
 				gui.openMainView();
 			}
+			else {
+				gui.showErrorMessage("Invalid Username");
+				gui.openLogin();
+			}
 		} catch (NullPointerException e) {
-			gui.showErrorMessage("Invalid Username");
+			gui.showErrorMessage("FUUUUUUUUUUUUUUUUUCK");
 			gui.openLogin();
 		}
 	}

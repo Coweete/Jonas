@@ -1,9 +1,11 @@
 package Gui;
 
+import collections.ArrayList;
 import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
 import playground.seb.uml.impl.Controller;
 import playground.seb.uml.impl.IController;
 import playground.seb.uml.impl.IGUI;
+import playground.seb.uml.impl.Media;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -27,7 +29,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     public Gui(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+        setVisible(false);
         setLayout(new GridLayout(4, 0, 0, 10));
         textFieldUser.setEditable(false);
 
@@ -102,11 +104,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     }
 
     @Override
-    public LoginPresenter getController() {
-        return null;
-    }
-
-    @Override
     public void setController(IController controller) {
         ctrl = controller;
     }
@@ -118,12 +115,18 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void updateViewFromMemberService() {
-
+        textFieldUser.setText(ctrl.getMemberService().getCurrentUser().getName());
+        StringBuilder builder = new StringBuilder();
+        ArrayList<Media> loan = ctrl.getMemberService().getCurrentUser().getLoan();
+        for (int i = 0; i < loan.size(); i++) {
+            builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
+        }
+        textArea.setText(builder.toString());
     }
 
     @Override
     public void updateViewFromMediaService() {
-
+        //TODO kika lite här
     }
 
     @Override
@@ -134,22 +137,17 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void closeLogin() {
-
+        setVisible(true);
     }
 
     @Override
     public void openMainView() {
-
+        setVisible(true);
     }
 
     @Override
     public void closeMainView() {
-
-    }
-
-    @Override
-    public void userRejected() {
-
+        setVisible(false);
     }
 
     @Override

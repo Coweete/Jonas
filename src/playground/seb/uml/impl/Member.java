@@ -34,7 +34,7 @@ public class Member {
 	 *
 	 * @return returns the loan-list
 	 */
-	public ArrayList getLoan() {
+	public ArrayList<Media> getLoan() {
 		return loan;
 	}
 

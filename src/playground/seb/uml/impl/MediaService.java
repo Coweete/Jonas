@@ -14,8 +14,6 @@ public class MediaService {
 
     public MediaService(String path) {
 	    this.path = this.getClass().getResource("/"+ path).getPath();
-
-
     }
 
     public void loadMedia() throws IOException {
@@ -40,9 +38,9 @@ public class MediaService {
             if (object[0].equals("Bok")) {
                 media = new Book(object[1], object[2], object[3], object[4]);
             } else {
-                actors = new String[object.length - 4];
-                for (int i = 4; i < object.length; i++)
-                    actors[i] = object[i];
+                actors = new String[object.length - 5];
+                for (int i = 5; i < object.length; i++)
+                    actors[i - 5] = object[i];
                 media = new DVD(object[1], object[2], object[3], actors);
             }
             table.put(media.getMediaID(), media);

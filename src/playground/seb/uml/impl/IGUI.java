@@ -6,8 +6,6 @@ import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
  * Created by seb on 2016-03-10.
  */
 public interface IGUI {
-	LoginPresenter getController();
-
 	/**
 	 * Set current controller
 	 * @param controller the controller for the view
@@ -50,11 +48,6 @@ public interface IGUI {
 	 * Close MainView
 	 */
 	void closeMainView();
-
-	/**
-	 * Failed to login
-	 */
-	void userRejected();
 
 	void showErrorMessage(String error);
 }
