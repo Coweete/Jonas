@@ -87,8 +87,7 @@ public class Controller implements IController {
 				gui.openLogin();
 			}
 		} catch (NullPointerException e) {
-			gui.showErrorMessage("FUUUUUUUUUUUUUUUUUCK");
-			gui.openLogin();
+			System.exit(0);
 		}
 	}
 

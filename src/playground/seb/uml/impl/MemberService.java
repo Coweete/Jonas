@@ -20,8 +20,6 @@ public class MemberService implements IMemberService {
 
     public void loadMember() throws IOException {
         loadMember(path);
-        System.out.println("aids");
-        System.out.println(memberTree.toString());
     }
 
     /**
