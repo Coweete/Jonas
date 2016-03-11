@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class Controller implements IController {
     private IGUI gui;
-    private IMediaService IMediaService;
+    private IMediaService mediaService;
     private IMemberService memberService;
     private Runnable onLogin;
 
@@ -33,7 +33,7 @@ public class Controller implements IController {
 
     @Override
     public IMediaService getMediaService() {
-        return this.IMediaService;
+        return this.mediaService;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Controller implements IController {
 
     @Override
     public void setMediaService(IMediaService IMediaService) {
-        this.IMediaService = IMediaService;
+        this.mediaService = IMediaService;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class Controller implements IController {
     @Override
     public void run() {
         try {
-            this.IMediaService.loadMedia();
+            this.mediaService.loadMedia();
             this.memberService.loadMember();
         } catch (IOException e) {
             gui.showErrorMessage("Failed load media and members");
@@ -101,7 +101,7 @@ public class Controller implements IController {
 
     @Override
     public void borrow(String mediaID) {
-        Media media = IMediaService.getMedia(mediaID);
+        Media media = mediaService.getMedia(mediaID);
         if (media == null) {
             this.gui.updateViewFromMediaService();
             gui.showErrorMessage("Ange giltigt mediaID");
@@ -118,7 +118,7 @@ public class Controller implements IController {
 
     @Override
     public void returnBook(String mediaID) {
-        Media media = IMediaService.getMedia(mediaID);
+        Media media = mediaService.getMedia(mediaID);
         if (media == null) {
             this.gui.updateViewFromMediaService();
             gui.showErrorMessage("Ange giltigt mediaID");
