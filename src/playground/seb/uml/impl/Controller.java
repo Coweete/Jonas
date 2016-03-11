@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class Controller implements IController {
 	private IGUI gui;
-	private MediaService mediaService;
+	private IMediaService IMediaService;
 	private IMemberService memberService;
 	private Runnable onLogin;
 
@@ -33,8 +33,8 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public MediaService getMediaService() {
-		return this.mediaService;
+	public IMediaService getMediaService() {
+		return this.IMediaService;
 	}
 
 	@Override
@@ -43,8 +43,8 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public void setMediaService(MediaService mediaService) {
-		this.mediaService = mediaService;
+	public void setMediaService(IMediaService IMediaService) {
+		this.IMediaService = IMediaService;
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class Controller implements IController {
 	@Override
 	public void run() {
 		try {
-			this.mediaService.loadMedia();
+			this.IMediaService.loadMedia();
 			this.memberService.loadMember();
 		} catch (IOException e) {
 			gui.showErrorMessage("Failed load media and members");
@@ -98,18 +98,19 @@ public class Controller implements IController {
 		memberService.setCurrentUserID("none");
 		gui.closeMainView();
 		gui.openLogin();
+
 	}
 
 	@Override
 	public void borrow(String mediaID) {
-		Media media = mediaService.getMedia(mediaID);
+		Media media = IMediaService.getMedia(mediaID);
 		memberService.getCurrentUser().loanMedia(media);
 		this.gui.updateViewFromMemberService();
 	}
 
 	@Override
 	public void returnBook(String mediaID) {
-		Media media = mediaService.getMedia(mediaID);
+		Media media = IMediaService.getMedia(mediaID);
 		memberService.getCurrentUser().returnMedia(media);
 		this.gui.updateViewFromMemberService();
 	}

@@ -13,11 +13,11 @@ public class AppMain {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
 			public void run() {
-				MediaService mediaService = new MediaService("files/Media.txt");
+				IMediaService IMediaService = new MediaService("files/Media.txt");
 				IMemberService memberService = new MemberService("files/Lantagare.txt");
 
 				Controller controller = new Controller();
-				controller.setMediaService(mediaService);
+				controller.setMediaService(IMediaService);
 				controller.setMemberService(memberService);
 
 				IGUI gui = new Gui();

@@ -6,11 +6,11 @@ package playground.seb.uml.impl;
 public interface IController {
 
 	IMemberService getMemberService();
-	MediaService getMediaService();
+	IMediaService getMediaService();
 
 	void setMemberService(IMemberService memberService);
 
-	void setMediaService(MediaService mediaService);
+	void setMediaService(IMediaService IMediaService);
 
 	/**
 	 * Get current view
