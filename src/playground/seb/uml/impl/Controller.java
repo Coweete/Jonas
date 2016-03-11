@@ -13,18 +13,7 @@ public class Controller implements IController {
     private IGUI gui;
     private IMediaService mediaService;
     private IMemberService memberService;
-    private Runnable onLogin;
 
-	/*
- * Author: Sebastian Börebäck
- * Copyright (c) 2016.
- */
-
-
-    public Controller() {
-
-
-    }
 
     @Override
     public IMemberService getMemberService() {

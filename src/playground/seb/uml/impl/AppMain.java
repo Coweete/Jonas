@@ -1,11 +1,8 @@
 package playground.seb.uml.impl;
 
 /**
- * Created by seb on 2016-03-10.
- */
-
-/**
  * Main class for creating the MediaBiblotek App.
+ * @author Sebastian Boreback
  */
 public class AppMain {
 	public static void main(String[] args) {

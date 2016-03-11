@@ -3,7 +3,7 @@ package playground.seb.uml.impl;
 import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
 
 /**
- * Created by seb on 2016-03-10.
+ * @author Sebastian Borreback, ... 2016-03-10.
  */
 public interface IGUI {
 	/**
@@ -49,8 +49,16 @@ public interface IGUI {
 	 */
 	void closeMainView();
 
+	/**
+	 * Show error message to user
+	 * @param error the error message.
+	 */
 	void showErrorMessage(String error);
 
+	/**
+	 * Show message to user
+	 * @param message the message
+	 */
 	void showMessage(String message);
 
 }
