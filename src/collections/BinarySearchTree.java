@@ -21,7 +21,7 @@ public class BinarySearchTree<K,V> implements SearchTree<K,V> {
     }
 
     /**
-     *COnstructor, puts specified comperator as the current one
+     *Constructor, puts specified comperator as the current one
      * @param comp The given comperator
      **/
     public BinarySearchTree(Comparator<K> comp) {
