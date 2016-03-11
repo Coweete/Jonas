@@ -41,7 +41,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     }
 
     /**
-     * @author Gustaf Bohlin, Johnatan Sona
      * Creates a basic JPanel
      * @param labelInfo text on the label
      * @param textField what textfield to put in panel
@@ -66,7 +65,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     }
 
     /**
-     * @author Jonatan Fridsten
      * A JPanel containing the list with mediaobjects
      * @param label text on the label
      * @param txtList the text area
