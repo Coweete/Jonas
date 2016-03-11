@@ -1,13 +1,11 @@
 package playground.seb.uml.impl;
 
-/**
- * Created by Sebastian Börebäck on 2016-03-09.
- */
 
 import java.io.IOException;
 
 /***
  * Controller that handles the communication between Model/service and the View
+ * @author Sebastian Boreback
  */
 public class Controller implements IController {
     private IGUI gui;

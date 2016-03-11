@@ -1,7 +1,8 @@
 package playground.seb.uml.impl;
 
 /**
- * Created by seb on 2016-03-10.
+ * Interface for the controller
+ * @author Sebastian Boreback
  */
 public interface IController {
 
@@ -39,7 +40,7 @@ public interface IController {
 	/**
 	 * Set view
 	 *
-	 * @param gui
+	 * @param gui the current view
 	 */
 	void setView(IGUI gui);
 

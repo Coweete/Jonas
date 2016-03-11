@@ -1,7 +1,7 @@
 package playground.seb.uml.impl;
 
 /**
- * @author Sebastian Börebäck on 2016-03-09.
+ * @author
  */
 public class Book extends Media {
 	private String author;
