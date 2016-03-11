@@ -13,8 +13,8 @@ import java.io.IOException;
 public interface IMemberService {
 
     /**
+     * Calls the private method "loadMember(String path)"
      * Reads from file and places data in a BST
-     * @return Filled out memberTree, with all members added
      **/
     void loadMember() throws IOException;
 
