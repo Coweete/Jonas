@@ -17,8 +17,12 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     private IController ctrl;
     private JTextArea textArea = new JTextArea();
     private JButton changeUser = new JButton("Byta användare"), borrow = new JButton("Låna bok"), returnBook = new JButton("Lämna tillbaka");
-    private JTextField textFieldUser = new JTextField(10), textFieldBorrow = new JTextField(10), textFieldReturn = new JTextField(10);
+    private JTextField textFieldUser = new JTextField(30), textFieldBorrow = new JTextField(30), textFieldReturn = new JTextField(30);
 
+	/**
+	 * Constructor.
+	 * Initializes all graphical components.
+	 */
     public Gui(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(false);
@@ -80,10 +84,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         panel.add(lblText,BorderLayout.WEST);
         panel.add(spText,BorderLayout.CENTER);
         return panel;
-    }
-
-    public static void main(String[] args) {
-
     }
 
     @Override
@@ -148,6 +148,11 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void showErrorMessage(String error) {
-        JOptionPane.showMessageDialog(null, error);
+		JOptionPane.showMessageDialog(null, error, "Error", JOptionPane.ERROR_MESSAGE);
+	}
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(null, message);
     }
 }
