@@ -18,7 +18,8 @@ public class MediaService implements IMediaService {
 
     @Override
     public void loadMedia() throws IOException {
-	    loadMedia(path);
+        System.out.println(path);
+        loadMedia(path);
     }
 
     /**

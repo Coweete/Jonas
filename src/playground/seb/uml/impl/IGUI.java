@@ -50,4 +50,6 @@ public interface IGUI {
 	void closeMainView();
 
 	void showErrorMessage(String error);
+
+	void showMessage(String message);
 }

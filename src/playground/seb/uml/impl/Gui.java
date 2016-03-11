@@ -150,4 +150,9 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     public void showErrorMessage(String error) {
 		JOptionPane.showMessageDialog(null, error, "Error", JOptionPane.ERROR_MESSAGE);
 	}
+
+    @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(null, message);
+    }
 }
