@@ -52,4 +52,5 @@ public interface IGUI {
 	void showErrorMessage(String error);
 
 	void showMessage(String message);
+
 }

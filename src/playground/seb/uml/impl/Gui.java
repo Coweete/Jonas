@@ -89,13 +89,18 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == changeUser) {
+            clearText();
 			ctrl.logout();
         }
         else if(e.getSource() == borrow) {
-			ctrl.borrow(textFieldBorrow.getText());
+            String input = textFieldBorrow.getText();
+            clearText();
+			ctrl.borrow(input);
         }
         else if(e.getSource() == returnBook) {
-            ctrl.returnBook(textFieldBorrow.getText());
+            String input = textFieldReturn.getText();
+            clearText();
+            ctrl.returnBook(input);
         }
     }
 
@@ -155,4 +160,11 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
+
+    private void clearText() {
+        textFieldBorrow.setText("");
+        textFieldReturn.setText("");
+        textArea.setText("");
+    }
+
 }
