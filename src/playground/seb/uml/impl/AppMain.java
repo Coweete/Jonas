@@ -5,6 +5,10 @@ package playground.seb.uml.impl;
  * @author Sebastian Boreback
  */
 public class AppMain {
+	/**
+	 * The main
+	 * @param args main args
+	 */
 	public static void main(String[] args) {
 
 		java.awt.EventQueue.invokeLater(new Runnable() {
