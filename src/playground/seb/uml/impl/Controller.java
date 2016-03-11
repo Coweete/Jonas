@@ -101,6 +101,10 @@ public class Controller implements IController {
     @Override
     public void borrow(String mediaID) {
         Media media = IMediaService.getMedia(mediaID);
+        if (media == null) {
+            gui.showErrorMessage("Ange giltigt mediaID");
+            return;
+        }
         if (media.isBorrowed()) {
             gui.showMessage("Bok är redan lånad");
         } else {
@@ -113,11 +117,15 @@ public class Controller implements IController {
     @Override
     public void returnBook(String mediaID) {
         Media media = IMediaService.getMedia(mediaID);
+        if (media == null) {
+            gui.showErrorMessage("Ange giltigt mediaID");
+            return;
+        }
         if (media.isBorrowed()) {
             memberService.getCurrentUser().returnMedia(media);
             media.setBorrowed(false);
             this.gui.updateViewFromMediaService();
-        }else {
+        } else {
             gui.showMessage("Bok är inte utlånad");
         }
     }
