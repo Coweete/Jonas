@@ -115,8 +115,9 @@ public class Controller implements IController {
         Media media = IMediaService.getMedia(mediaID);
         if (media.isBorrowed()) {
             memberService.getCurrentUser().returnMedia(media);
+            media.setBorrowed(false);
             this.gui.updateViewFromMediaService();
-        } else {
+        }else {
             gui.showMessage("Bok är inte utlånad");
         }
     }
