@@ -78,6 +78,7 @@ public class Controller implements IController {
             if (memberService.userExists()) {
                 gui.closeLogin();
                 this.gui.updateViewFromMemberService();
+                this.gui.updateViewFromMediaService();
                 gui.openMainView();
             } else {
                 gui.showErrorMessage("Invalid Username");
