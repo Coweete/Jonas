@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 /**
  * Creates a list of elements of the type E
- * @param <E> type of object
+ * @param <E> type of object.
  */
 public class ArrayList<E> implements List<E> {
 	private E[] elements;
