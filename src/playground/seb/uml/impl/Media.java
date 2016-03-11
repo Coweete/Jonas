@@ -31,6 +31,9 @@ public abstract class Media {
 		return borrowed;
 	}
 
+	public void setBorrowed(boolean borrowed) { this.borrowed = borrowed; }
+
+
 	public boolean equals(Object obj) {
 		Media media = (Media) obj;
 		return mediaID.equals(media.getMediaID());
