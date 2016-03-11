@@ -25,6 +25,10 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         setLayout(new GridLayout(4, 0, 0, 10));
         textFieldUser.setEditable(false);
 
+		changeUser.addActionListener(this);
+		borrow.addActionListener(this);
+		returnBook.addActionListener(this);
+
         add(basicJPanel("PersonNr", textFieldUser, changeUser, "Användare"));
         add(basicJPanel("Media ID", textFieldBorrow, borrow, "Låna"));
         add(basicJPanel("Media ID", textFieldReturn, returnBook, "Lämna tillbaka"));
@@ -85,10 +89,10 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == changeUser) {
-            ctrl.login();
+			ctrl.logout();
         }
         else if(e.getSource() == borrow) {
-            ctrl.borrow(textFieldBorrow.getText());
+			ctrl.borrow(textFieldBorrow.getText());
         }
         else if(e.getSource() == returnBook) {
             ctrl.returnBook(textFieldBorrow.getText());
@@ -108,17 +112,16 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     @Override
     public void updateViewFromMemberService() {
         textFieldUser.setText(ctrl.getMemberService().getCurrentUser().getName());
-        StringBuilder builder = new StringBuilder();
-        ArrayList<Media> loan = ctrl.getMemberService().getCurrentUser().getLoan();
-        for (int i = 0; i < loan.size(); i++) {
-            builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
-        }
-        textArea.setText(builder.toString());
     }
 
     @Override
     public void updateViewFromMediaService() {
-        //TODO kika lite här
+		StringBuilder builder = new StringBuilder();
+		ArrayList<Media> loan = ctrl.getMemberService().getCurrentUser().getLoan();
+		for (int i = 0; i < loan.size(); i++) {
+			builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
+		}
+		textArea.setText(builder.toString());
     }
 
     @Override

@@ -97,6 +97,7 @@ public class Controller implements IController {
 	public void logout() {
 		memberService.setCurrentUserID("none");
 		gui.closeMainView();
+		System.out.println("logout");
 		gui.openLogin();
 	}
 
@@ -104,13 +105,15 @@ public class Controller implements IController {
 	public void borrow(String mediaID) {
 		Media media = mediaService.getMedia(mediaID);
 		memberService.getCurrentUser().loanMedia(media);
-		this.gui.updateViewFromMemberService();
+		System.out.println("borrow");
+		this.gui.updateViewFromMediaService();
 	}
 
 	@Override
 	public void returnBook(String mediaID) {
 		Media media = mediaService.getMedia(mediaID);
 		memberService.getCurrentUser().returnMedia(media);
-		this.gui.updateViewFromMemberService();
+		System.out.println("return");
+		this.gui.updateViewFromMediaService();
 	}
 }
