@@ -122,6 +122,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 			builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
 		}
 		textArea.setText(builder.toString());
+        //TODO ingen logik har. ask on handlening.
     }
 
     @Override
