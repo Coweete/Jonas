@@ -78,6 +78,7 @@ public class Controller implements IController {
             if (memberService.userExists()) {
                 gui.closeLogin();
                 this.gui.updateViewFromMemberService();
+                this.gui.updateViewFromMediaService();
                 gui.openMainView();
             } else {
                 gui.showErrorMessage("Invalid Username");
@@ -102,6 +103,7 @@ public class Controller implements IController {
     public void borrow(String mediaID) {
         Media media = IMediaService.getMedia(mediaID);
         if (media == null) {
+            this.gui.updateViewFromMediaService();
             gui.showErrorMessage("Ange giltigt mediaID");
             return;
         }
@@ -110,23 +112,24 @@ public class Controller implements IController {
         } else {
             memberService.getCurrentUser().loanMedia(media);
             media.setBorrowed(true);
-            this.gui.updateViewFromMediaService();
         }
+        this.gui.updateViewFromMediaService();
     }
 
     @Override
     public void returnBook(String mediaID) {
         Media media = IMediaService.getMedia(mediaID);
         if (media == null) {
+            this.gui.updateViewFromMediaService();
             gui.showErrorMessage("Ange giltigt mediaID");
             return;
         }
         if (media.isBorrowed()) {
             memberService.getCurrentUser().returnMedia(media);
             media.setBorrowed(false);
-            this.gui.updateViewFromMediaService();
         } else {
             gui.showMessage("Bok är inte utlånad");
         }
+        this.gui.updateViewFromMediaService();
     }
 }
