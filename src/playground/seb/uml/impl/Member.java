@@ -71,6 +71,7 @@ public class Member {
 	 * @param mediaItem The Media-item that is to be added
 	 */
 	public void loanMedia(Media mediaItem){
+
 		loan.add(mediaItem);
 	}
 

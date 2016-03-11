@@ -8,7 +8,7 @@ import java.io.*;
  * @author Gustaf Bohlin
  *         This class reads the Media objects from a text file and fills a Hashtable with them
  */
-public class MediaService {
+public class MediaService implements IMediaService {
     private HashTableCH<String, Media> table;
     private String path;
 
@@ -16,6 +16,7 @@ public class MediaService {
 	    this.path = this.getClass().getResource("/"+ path).getPath();
     }
 
+    @Override
     public void loadMedia() throws IOException {
 	    loadMedia(path);
     }
@@ -49,6 +50,7 @@ public class MediaService {
         return table;
     }
 
+    @Override
     public Media getMedia(String mediaID) {
         return this.table.get(mediaID);
     }
