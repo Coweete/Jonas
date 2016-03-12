@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  * @author Jonatan Fridsten, Johnatan Sona, Gustaf Bohlin
- * This is the class containing all Graphical components
+ *         This is the class containing all Graphical components
  */
 public class Gui extends JFrame implements ActionListener, IGUI {
     private String currentUser;
@@ -21,19 +21,19 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     private JButton changeUser = new JButton("Byta användare"), borrow = new JButton("Låna bok"), returnBook = new JButton("Lämna tillbaka");
     private JTextField textFieldUser = new JTextField(30), textFieldBorrow = new JTextField(30), textFieldReturn = new JTextField(30);
 
-	/**
-	 * Constructor.
-	 * Initializes all graphical components.
-	 */
-    public Gui(){
+    /**
+     * Constructor.
+     * Initializes all graphical components.
+     */
+    public Gui() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(false);
         setLayout(new GridLayout(4, 0, 0, 10));
         textFieldUser.setEditable(false);
 
-		changeUser.addActionListener(this);
-		borrow.addActionListener(this);
-		returnBook.addActionListener(this);
+        changeUser.addActionListener(this);
+        borrow.addActionListener(this);
+        returnBook.addActionListener(this);
 
         add(basicJPanel("PersonNr", textFieldUser, changeUser, "Användare"));
         add(basicJPanel("Media ID", textFieldBorrow, borrow, "Låna"));
@@ -44,13 +44,14 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     /**
      * Creates a basic JPanel
-     * @param labelInfo text on the label
-     * @param textField what textfield to put in panel
-     * @param button what button to put in panel
+     *
+     * @param labelInfo    text on the label
+     * @param textField    what textfield to put in panel
+     * @param button       what button to put in panel
      * @param borderString text on the border
      * @return the actual panel
      */
-    private JPanel basicJPanel(String labelInfo, JTextField textField,JButton button, String borderString) {
+    private JPanel basicJPanel(String labelInfo, JTextField textField, JButton button, String borderString) {
         JPanel panel = new JPanel(new BorderLayout());
         JPanel panelButton = new JPanel();
         JPanel panelLabel = new JPanel();
@@ -68,12 +69,13 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     /**
      * A JPanel containing the list with mediaobjects
-     * @param label text on the label
-     * @param txtList the text area
+     *
+     * @param label        text on the label
+     * @param txtList      the text area
      * @param borderString text on the border
      * @return the actual panel
      */
-    public JPanel panelList(String label, JTextArea txtList, String borderString){
+    public JPanel panelList(String label, JTextArea txtList, String borderString) {
         JPanel panel = new JPanel();
         JLabel lblText = new JLabel(label);
         JScrollPane spText = new JScrollPane(txtList);
@@ -81,25 +83,23 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         panel.setLayout(new BorderLayout());
         TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.black), borderString);
         panel.setBorder(border);
-        panel.add(lblText,BorderLayout.WEST);
-        panel.add(spText,BorderLayout.CENTER);
+        panel.add(lblText, BorderLayout.WEST);
+        panel.add(spText, BorderLayout.CENTER);
         return panel;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == changeUser) {
-            clearText();
-			ctrl.logout();
-        }
-        else if(e.getSource() == borrow) {
+        if (e.getSource() == changeUser) {
+            clearAllText();
+            ctrl.logout();
+        } else if (e.getSource() == borrow) {
             String input = textFieldBorrow.getText();
-            clearText();
-			ctrl.borrow(input);
-        }
-        else if(e.getSource() == returnBook) {
+            clearInputText();
+            ctrl.borrow(input);
+        } else if (e.getSource() == returnBook) {
             String input = textFieldReturn.getText();
-            clearText();
+            clearInputText();
             ctrl.returnBook(input);
         }
     }
@@ -111,6 +111,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void updateMemberServiceFromView() {
+
         ctrl.getMemberService().setCurrentUserID(currentUser);
     }
 
@@ -121,16 +122,16 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void updateViewFromMediaService() {
-		StringBuilder builder = new StringBuilder();
-		ArrayList<Media> loan = ctrl.getMemberService().getCurrentUser().getLoan();
-		for (int i = 0; i < loan.size(); i++) {
-			builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
-		}
-		textArea.setText(builder.toString());
-        //TODO ingen logik har. ask on handlening.
+        StringBuilder builder = new StringBuilder();
+        ArrayList<Media> loan = ctrl.getMemberService().getCurrentUser().getLoan();
+        for (int i = 0; i < loan.size(); i++) {
+            builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
+        }
+        textArea.setText(builder.toString());
     }
 
     @Override
+
     public void openLogin() {
         currentUser = JOptionPane.showInputDialog(null, "Enter User");
         ctrl.login();
@@ -153,18 +154,23 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void showErrorMessage(String error) {
-		JOptionPane.showMessageDialog(null, error, "Error", JOptionPane.ERROR_MESSAGE);
-	}
+        JOptionPane.showMessageDialog(null, error, "Error", JOptionPane.ERROR_MESSAGE);
+    }
 
     @Override
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
 
-    private void clearText() {
-        textFieldBorrow.setText("");
-        textFieldReturn.setText("");
+    private void clearAllText() {
+        clearInputText();
         textArea.setText("");
     }
+
+    private void clearInputText() {
+        textFieldBorrow.setText("");
+        textFieldReturn.setText("");
+    }
+
 
 }
