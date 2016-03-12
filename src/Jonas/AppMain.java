@@ -1,4 +1,12 @@
-package playground.seb.uml.impl;
+package Jonas;
+
+import Jonas.Controller.Controller;
+import Jonas.Model.IMediaService;
+import Jonas.Model.IMemberService;
+import Jonas.Model.MediaService;
+import Jonas.Model.MemberService;
+import Jonas.View.Gui;
+import Jonas.View.IGUI;
 
 /**
  * Main class for creating the MediaBiblotek App.

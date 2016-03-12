@@ -1,5 +1,10 @@
-package playground.seb.uml.impl;
+package Jonas.Controller;
 
+
+import Jonas.View.IGUI;
+import Jonas.Model.IMediaService;
+import Jonas.Model.IMemberService;
+import Jonas.Model.Media;
 
 import java.io.IOException;
 

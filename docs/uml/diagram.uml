@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="841.5385964912282" y="214.0">Jonas.Model.IMemberService</node>
+    <node x="477.0" y="214.0">Jonas.View.IGUI</node>
+    <node x="605.0328947368421" y="354.0">Jonas.View.Gui</node>
+    <node x="0.0" y="203.5">Jonas.Model.Book</node>
+    <node x="449.03289473684214" y="417.0">Jonas.Controller.Controller</node>
+    <node x="1018.6701754385966" y="172.0">Jonas.Model.Member</node>
+    <node x="143.0" y="203.5">Jonas.Model.DVD</node>
+    <node x="322.75" y="214.0">Jonas.Model.IMediaService</node>
+    <node x="589.25" y="621.0">Jonas.AppMain</node>
+    <node x="97.43859649122817" y="427.5">Jonas.Model.MediaService</node>
+    <node x="705.063596491228" y="214.0">Jonas.Controller.IController</node>
+    <node x="1077.205263157895" y="42.0">collections</node>
+    <node x="972.5122807017545" y="417.0">Jonas.Model.MemberService</node>
+    <node x="123.38728070175443" y="0.0">Jonas.Model.Media</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Jonas.Controller.Controller" target="Jonas.Model.IMemberService">
+      <point x="51.0" y="-45.5" />
+      <point x="568.0328947368421" y="334.0" />
+      <point x="872.0385964912282" y="334.0" />
+      <point x="-30.5" y="14.0" />
+    </edge>
+    <edge source="Jonas.AppMain" target="Jonas.Controller.Controller">
+      <point x="-10.125" y="-14.0" />
+      <point x="619.625" y="591.0" />
+      <point x="517.0328947368421" y="591.0" />
+      <point x="0.0" y="45.5" />
+    </edge>
+    <edge source="Jonas.AppMain" target="Jonas.Model.MemberService">
+      <point x="30.375" y="-14.0" />
+      <point x="660.125" y="601.0" />
+      <point x="1153.5122807017547" y="601.0" />
+      <point x="0.0" y="45.5" />
+    </edge>
+    <edge source="Jonas.Model.MediaService" target="collections">
+      <point x="22.0" y="-35.0" />
+      <point x="251.43859649122817" y="324.0" />
+      <point x="293.5" y="324.0" />
+      <point x="293.5" y="142.0" />
+      <point x="1088.8719298245614" y="142.0" />
+      <point x="-58.33333333333337" y="14.0" />
+    </edge>
+    <edge source="Jonas.Controller.Controller" target="Jonas.View.IGUI">
+      <point x="-17.0" y="-45.5" />
+      <point x="500.03289473684214" y="334.0" />
+      <point x="491.0" y="334.0" />
+      <point x="-14.0" y="14.0" />
+    </edge>
+    <edge source="Jonas.Model.MediaService" target="Jonas.Model.Media">
+      <point x="-22.0" y="-35.0" />
+      <point x="207.43859649122817" y="314.0" />
+      <point x="282.5" y="314.0" />
+      <point x="282.5" y="152.0" />
+      <point x="244.63728070175443" y="152.0" />
+      <point x="24.25" y="56.0" />
+    </edge>
+    <edge source="Jonas.Model.Book" target="Jonas.Model.Media">
+      <point x="0.0" y="-24.5" />
+      <point x="61.5" y="152.0" />
+      <point x="147.63728070175443" y="152.0" />
+      <point x="-72.75" y="56.0" />
+    </edge>
+    <edge source="Jonas.Model.Member" target="Jonas.Model.Media">
+      <point x="-78.33333333333331" y="-56.0" />
+      <point x="1057.8368421052633" y="132.0" />
+      <point x="293.13728070175443" y="132.0" />
+      <point x="72.75" y="56.0" />
+    </edge>
+    <edge source="Jonas.Model.Member" target="collections">
+      <point x="0.0" y="-56.0" />
+      <point x="-11.666666666666629" y="14.0" />
+    </edge>
+    <edge source="Jonas.Model.MediaService" target="Jonas.Model.DVD">
+      <point x="-66.0" y="-35.0" />
+      <point x="163.43859649122817" y="304.0" />
+      <point x="207.5" y="304.0" />
+      <point x="0.0" y="24.5" />
+    </edge>
+    <edge source="Jonas.Model.MemberService" target="Jonas.Model.Member">
+      <point x="-72.4" y="-45.5" />
+      <point x="1081.1122807017546" y="334.0" />
+      <point x="1077.4201754385967" y="334.0" />
+      <point x="-58.75" y="56.0" />
+    </edge>
+    <edge source="Jonas.Model.DVD" target="Jonas.Model.Media">
+      <point x="0.0" y="-24.5" />
+      <point x="207.5" y="152.0" />
+      <point x="196.13728070175443" y="152.0" />
+      <point x="-24.25" y="56.0" />
+    </edge>
+    <edge source="Jonas.Model.MediaService" target="Jonas.Model.Book">
+      <point x="-110.0" y="-35.0" />
+      <point x="119.43859649122817" y="334.0" />
+      <point x="61.5" y="334.0" />
+      <point x="0.0" y="24.5" />
+    </edge>
+    <edge source="Jonas.Controller.Controller" target="Jonas.Model.IMediaService">
+      <point x="-51.0" y="-45.5" />
+      <point x="466.03289473684214" y="334.0" />
+      <point x="405.25" y="334.0" />
+      <point x="27.5" y="14.0" />
+    </edge>
+    <edge source="Jonas.Model.MemberService" target="Jonas.Model.IMemberService">
+      <point x="-144.8" y="-45.5" />
+      <point x="1008.7122807017545" y="334.0" />
+      <point x="933.0385964912282" y="334.0" />
+      <point x="30.5" y="14.0" />
+    </edge>
+    <edge source="Jonas.View.Gui" target="Jonas.View.IGUI">
+      <point x="-77.75" y="-108.5" />
+      <point x="682.7828947368421" y="314.0" />
+      <point x="519.0" y="314.0" />
+      <point x="14.0" y="14.0" />
+    </edge>
+    <edge source="Jonas.Model.MediaService" target="Jonas.Model.IMediaService">
+      <point x="110.0" y="-35.0" />
+      <point x="339.43859649122817" y="334.0" />
+      <point x="350.25" y="334.0" />
+      <point x="-27.5" y="14.0" />
+    </edge>
+    <edge source="Jonas.Model.MemberService" target="collections">
+      <point x="144.79999999999995" y="-45.5" />
+      <point x="1298.3122807017544" y="334.0" />
+      <point x="1275.1701754385967" y="334.0" />
+      <point x="1275.1701754385967" y="132.0" />
+      <point x="1205.538596491228" y="132.0" />
+      <point x="58.33333333333326" y="14.0" />
+    </edge>
+    <edge source="Jonas.AppMain" target="Jonas.View.Gui">
+      <point x="10.125" y="-14.0" />
+      <point x="639.875" y="591.0" />
+      <point x="760.5328947368421" y="591.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="Jonas.Controller.Controller" target="Jonas.Controller.IController">
+      <point x="17.0" y="-45.5" />
+      <point x="534.0328947368421" y="324.0" />
+      <point x="727.313596491228" y="324.0" />
+      <point x="-22.25" y="14.0" />
+    </edge>
+    <edge source="Jonas.AppMain" target="Jonas.Model.MediaService">
+      <point x="-30.375" y="-14.0" />
+      <point x="599.375" y="601.0" />
+      <point x="229.43859649122817" y="601.0" />
+      <point x="0.0" y="35.0" />
+    </edge>
+    <edge source="Jonas.View.Gui" target="Jonas.Controller.IController">
+      <point x="77.75" y="-108.5" />
+      <point x="838.2828947368421" y="324.0" />
+      <point x="771.813596491228" y="324.0" />
+      <point x="22.25" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7867158671586716" x="667.5" y="264.62992495309567" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

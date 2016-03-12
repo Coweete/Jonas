@@ -1,6 +1,6 @@
-package playground.seb.uml.impl;
+package Jonas.View;
 
-import playground.seb.uml.SebExempel.MVP_pattern.LoginPresenter;
+import Jonas.Controller.IController;
 
 /**
  * @author Sebastian Borreback, ... 2016-03-10.

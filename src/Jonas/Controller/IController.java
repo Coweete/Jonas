@@ -1,4 +1,8 @@
-package playground.seb.uml.impl;
+package Jonas.Controller;
+
+import Jonas.View.IGUI;
+import Jonas.Model.IMediaService;
+import Jonas.Model.IMemberService;
 
 /**
  * Interface for the controller

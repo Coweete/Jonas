@@ -1,6 +1,5 @@
-package playground.seb.uml.impl;
+package Jonas.Model;
 
-import collections.BinarySearchTree;
 import collections.List;
 
 import java.io.IOException;

@@ -1,6 +1,8 @@
-package playground.seb.uml.impl;
+package Jonas.View;
 
+import Jonas.Controller.IController;
 import collections.ArrayList;
+import Jonas.Model.Media;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

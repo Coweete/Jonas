@@ -1,4 +1,4 @@
-package playground.seb.uml.impl;
+package Jonas.Model;
 import collections.ArrayList;
 
 /**
