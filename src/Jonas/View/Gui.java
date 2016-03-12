@@ -5,6 +5,7 @@ import collections.ArrayList;
 import Jonas.Model.Media;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,7 +19,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     private String currentUser;
     private IController ctrl;
     private JTextArea textArea = new JTextArea();
-    private JButton changeUser = new JButton("Byta användare"), borrow = new JButton("Låna bok"), returnBook = new JButton("Lämna tillbaka");
+    private JButton changeUser = new JButton("Byta användare"), borrow = new JButton("Låna media"), returnBook = new JButton("Lämna tillbaka");
     private JTextField textFieldUser = new JTextField(30), textFieldBorrow = new JTextField(30), textFieldReturn = new JTextField(30);
 
     /**
@@ -30,15 +31,18 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         setVisible(false);
         setLayout(new GridLayout(4, 0, 0, 10));
         textFieldUser.setEditable(false);
+	    textFieldUser.setBorder(new EmptyBorder(0, 10, 10, 0));
 
         changeUser.addActionListener(this);
         borrow.addActionListener(this);
         returnBook.addActionListener(this);
 
-        add(basicJPanel("PersonNr", textFieldUser, changeUser, "Användare"));
+        add(basicJPanel("Namn", textFieldUser, changeUser, "Användare"));
         add(basicJPanel("Media ID", textFieldBorrow, borrow, "Låna"));
         add(basicJPanel("Media ID", textFieldReturn, returnBook, "Lämna tillbaka"));
+
         add(panelList("Media", textArea, "Lista av media objekt"));
+	    this.setResizable(false);
         pack();
     }
 
@@ -56,6 +60,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         JPanel panelButton = new JPanel();
         JPanel panelLabel = new JPanel();
         JLabel label = new JLabel(labelInfo);
+
         panelButton.add(button);
         panelLabel.add(label);
 
@@ -76,9 +81,11 @@ public class Gui extends JFrame implements ActionListener, IGUI {
      * @return the actual panel
      */
     public JPanel panelList(String label, JTextArea txtList, String borderString) {
+
         JPanel panel = new JPanel();
         JLabel lblText = new JLabel(label);
-        JScrollPane spText = new JScrollPane(txtList);
+	    JScrollPane spText = new JScrollPane(txtList);
+
         spText.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         panel.setLayout(new BorderLayout());
         TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.black), borderString);
