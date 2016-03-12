@@ -67,7 +67,7 @@ public class Controller implements IController {
 	public void login() {
 		gui.updateMemberServiceFromView();
 		// TODO Just for testing
-		memberService.setCurrentUserID("681102-9999");
+		//memberService.setCurrentUserID("681102-9999");
 
 		try {
 			if (memberService.userExists()) {
