@@ -129,7 +129,7 @@ public class DummyController implements IController {
 			memberService.getCurrentUser().returnMedia(media);
 			media.setBorrowed(false);
 		} else {
-			gui.showMessage("Bok är inte utlånad");
+			gui.showMessage("Media är inte utlånad");
 		}
 		this.gui.updateViewFromMediaService();
 	}
