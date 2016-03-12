@@ -98,8 +98,8 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         panel.setLayout(new BorderLayout());
         TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.black), borderString);
         panel.setBorder(border);
-        panel.add(lblText, BorderLayout.WEST);
         panel.add(spText, BorderLayout.CENTER);
+        panel.setPreferredSize(new Dimension(250, 100));
         return panel;
     }
 
@@ -147,7 +147,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 				        loan.get(i).getMediaID() + " , " +
 				        loan.get(i).getTitle()+ " , " +
 				        loan.get(i).getYear()+ " , " +
-				        ((Book) media).getAuthor());
+				        ((Book) media).getAuthor() + "\n");
 	        }
 	        if (media instanceof DVD) {
 		        String actors = Arrays.toString(((DVD) media).getActors());
@@ -155,7 +155,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 				        loan.get(i).getMediaID() + " , " +
 				        loan.get(i).getTitle() + " , " +
 				        loan.get(i).getYear() + " , "
-				        + "Skådespelare:"+actors);
+				        + "Skådespelare:"+actors + "\n");
 	        }
 
 
