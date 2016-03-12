@@ -21,6 +21,7 @@ import java.util.Arrays;
 public class Gui extends JFrame implements ActionListener, IGUI {
     private String currentUser;
     private IController ctrl;
+    private JPanel mainPanelBasic = new JPanel();
     private JTextArea textArea = new JTextArea();
     private JButton changeUser = new JButton("Byta användare"), borrow = new JButton("Låna media"), returnBook = new JButton("Lämna tillbaka");
     private JTextField textFieldUser = new JTextField(30), textFieldBorrow = new JTextField(30), textFieldReturn = new JTextField(30);
@@ -32,7 +33,8 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     public Gui() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(false);
-        setLayout(new GridLayout(4, 0, 0, 10));
+        setLayout(new BorderLayout());
+        mainPanelBasic.setLayout(new GridLayout(3, 0, 0, 10));
         textFieldUser.setEditable(false);
 	    textFieldUser.setBorder(new EmptyBorder(0, 10, 10, 0));
 
@@ -40,11 +42,14 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         borrow.addActionListener(this);
         returnBook.addActionListener(this);
 
-        add(basicJPanel("Namn", textFieldUser, changeUser, "Användare"));
-        add(basicJPanel("Media ID", textFieldBorrow, borrow, "Låna"));
-        add(basicJPanel("Media ID", textFieldReturn, returnBook, "Lämna tillbaka"));
+        mainPanelBasic.add(basicJPanel("Namn", textFieldUser, changeUser, "Användare"));
+        mainPanelBasic.add(basicJPanel("Media ID", textFieldBorrow, borrow, "Låna"));
+        mainPanelBasic.add(basicJPanel("Media ID", textFieldReturn, returnBook, "Lämna tillbaka"));
+        mainPanelBasic.setBorder(new EmptyBorder(0,0,10,0));
 
-        add(panelList("Media", textArea, "Lista av media objekt"));
+        add(panelList("Media", textArea, "Lista av media objekt"), BorderLayout.CENTER);
+        add(mainPanelBasic, BorderLayout.NORTH);
+
 	    this.setResizable(false);
         pack();
     }
