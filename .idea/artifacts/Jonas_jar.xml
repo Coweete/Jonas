@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Jonas:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Jonas_jar</output-path>
+    <root id="archive" name="Jonas.jar">
+      <element id="module-output" name="Jonas" />
+    </root>
+  </artifact>
+</component>
