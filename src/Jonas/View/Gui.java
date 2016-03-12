@@ -1,6 +1,8 @@
 package Jonas.View;
 
 import Jonas.Controller.IController;
+import Jonas.Model.Book;
+import Jonas.Model.DVD;
 import collections.ArrayList;
 import Jonas.Model.Media;
 
@@ -10,6 +12,7 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 /**
  * @author Jonatan Fridsten, Johnatan Sona, Gustaf Bohlin
@@ -131,8 +134,26 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     public void updateViewFromMediaService() {
         StringBuilder builder = new StringBuilder();
         ArrayList<Media> loan = ctrl.getMemberService().getCurrentUser().getLoan();
+
         for (int i = 0; i < loan.size(); i++) {
-            builder.append(loan.get(i).getMediaID() + " , " + loan.get(i).getTitle() + "\n");
+	        Media media = loan.get(i);
+	        if (media instanceof Book) {
+		        builder.append("Bok" +": "+
+				        loan.get(i).getMediaID() + " , " +
+				        loan.get(i).getTitle()+ " , " +
+				        loan.get(i).getYear()+ " , " +
+				        ((Book) media).getAuthor());
+	        }
+	        if (media instanceof DVD) {
+		        String actors = Arrays.toString(((DVD) media).getActors());
+		        builder.append("Dvd" + ": " +
+				        loan.get(i).getMediaID() + " , " +
+				        loan.get(i).getTitle() + " , " +
+				        loan.get(i).getYear() + " , "
+				        + "Skådespelare:"+actors);
+	        }
+
+
         }
         textArea.setText(builder.toString());
     }
