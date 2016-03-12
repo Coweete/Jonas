@@ -36,4 +36,18 @@ public abstract class Media {
 		Media media = (Media) obj;
 		return mediaID.equals(media.getMediaID());
 	}
+
+	/**
+	 * Converts the Media to a string
+	 * @return a string object of Media
+	 */
+	@Override
+	public String toString() {
+		return "Media{" +
+				"mediaID='" + mediaID + '\'' +
+				", title='" + title + '\'' +
+				", year='" + year + '\'' +
+				", borrowed=" + borrowed +
+				'}';
+	}
 }

@@ -86,4 +86,17 @@ public class Member {
 		return loan.remove(loan.indexOf(mediaItem)) != null;
 	}
 
+	/**
+	 * Converts the Member to a string
+	 * @return a string object of Member
+	 */
+	@Override
+	public String toString() {
+		return "Member{" +
+				"loan=" + loan +
+				", memberID='" + memberID + '\'' +
+				", name='" + name + '\'' +
+				", phoneNumber='" + phoneNumber + '\'' +
+				'}';
+	}
 }
