@@ -110,7 +110,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         } else if (e.getSource() == returnBook) {
             String input = textFieldReturn.getText();
             clearInputText();
-            ctrl.returnBook(input);
+            ctrl.returnMedia(input);
         }
     }
 

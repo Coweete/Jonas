@@ -112,7 +112,7 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public void returnBook(String mediaID) {
+	public void returnMedia(String mediaID) {
 		Media media = mediaService.getMedia(mediaID);
 		if (media == null) {
 			this.gui.updateViewFromMediaService();

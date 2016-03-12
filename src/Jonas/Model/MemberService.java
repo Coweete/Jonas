@@ -15,7 +15,9 @@ public class MemberService implements IMemberService {
     private String path;
 
     public MemberService(String path) {
-        this.path = this.getClass().getResource("/" + path).getPath();
+	    System.out.println(this.path = getClass().getClassLoader().getResource(path).getPath());
+	    this.path = getClass().getClassLoader().getResource(path).getPath();
+//        this.path = this.getClass().getResource("/" + path).getPath();
     }
 
     public void loadMember() throws IOException {

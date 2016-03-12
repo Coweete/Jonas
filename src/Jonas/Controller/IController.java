@@ -71,5 +71,5 @@ public interface IController {
 	/**
 	 * Return book
 	 */
-	void returnBook(String mediaID);
+	void returnMedia(String mediaID);
 }

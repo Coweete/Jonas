@@ -13,7 +13,8 @@ public class MediaService implements IMediaService {
     private String path;
 
     public MediaService(String path) {
-	    this.path = this.getClass().getResource("/"+ path).getPath();
+	    System.out.println(getClass().getClassLoader().getResource(path));
+	    this.path = getClass().getClassLoader().getResource(path).getPath();
     }
 
     @Override
