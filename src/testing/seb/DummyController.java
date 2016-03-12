@@ -60,6 +60,7 @@ public class DummyController implements IController {
 		memberService.setCurrentUserID("none");
 		this.gui.setController(this);
 
+		// TODO: 2016-03-12 :18:03  log in the user directly
 //		this.gui.openLogin();
 		this.login();
 	}
@@ -130,6 +131,7 @@ public class DummyController implements IController {
 		this.gui.updateViewFromMediaService();
 	}
 
+	// TODO: 2016-03-12 :18:03 Run the dummyController
 	public static void main(String[] args) {
 
 		java.awt.EventQueue.invokeLater(new Runnable() {

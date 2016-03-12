@@ -53,6 +53,7 @@ public class DummyMediaService implements IMediaService {
                     actors[i - 5] = object[i];
                 media = new DVD(object[1], object[2], object[3], actors);
             }
+	        // TODO: 2016-03-12 :18:04 Added so that you can see all the media in mediaService
 	        System.out.println(media);
 	        table.put(media.getMediaID(), media);
         }
