@@ -7,6 +7,7 @@ import Jonas.Model.IMemberService;
 import Jonas.Model.Media;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /***
  * Controller that handles the communication between Model/service and the View
@@ -54,8 +55,10 @@ public class Controller implements IController {
 		try {
 			this.mediaService.loadMedia();
 			this.memberService.loadMember();
-		} catch (IOException e) {
-			gui.showErrorMessage("Failed load media and members");
+		} catch (URISyntaxException | IOException e) {
+			gui.showErrorMessage(e.getMessage());
+			System.exit(1);
+
 		}
 		memberService.setCurrentUserID("none");
 		this.gui.setController(this);
@@ -103,7 +106,7 @@ public class Controller implements IController {
 			return;
 		}
 		if (media.isBorrowed()) {
-			gui.showMessage("Bok är redan lånad");
+			gui.showMessage("Mediat är redan lånad");
 		} else {
 			memberService.getCurrentUser().loanMedia(media);
 			media.setBorrowed(true);

@@ -7,6 +7,7 @@ import Jonas.View.Gui;
 import Jonas.View.IGUI;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /***
  * Controller that handles the communication between Model/service and the View
@@ -54,8 +55,10 @@ public class DummyController implements IController {
 		try {
 			this.mediaService.loadMedia();
 			this.memberService.loadMember();
-		} catch (IOException e) {
-			gui.showErrorMessage("Failed load media and members");
+		} catch (IOException | NullPointerException | URISyntaxException e) {
+			gui.showErrorMessage(e.getMessage());
+			System.out.println();
+			e.printStackTrace();
 		}
 		memberService.setCurrentUserID("none");
 		this.gui.setController(this);
@@ -137,7 +140,7 @@ public class DummyController implements IController {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
 			public void run() {
-				IMediaService IMediaService = new DummyMediaService("files/Media.txt");
+				IMediaService IMediaService = new MediaService("files/Media.txt");
 				IMemberService memberService = new MemberService("files/Lantagare.txt");
 
 				DummyController controller = new DummyController();

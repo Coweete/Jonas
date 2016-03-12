@@ -6,27 +6,24 @@ import Jonas.Model.IMediaService;
 import Jonas.Model.Media;
 import collections.HashTableCH;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URISyntaxException;
 
 /**
  * @author Gustaf Bohlin
  *         This class reads the Media objects from a text file and fills a Hashtable with them
  */
 public class DummyMediaService implements IMediaService {
-    private HashTableCH<String, Media> table;
-    private String path;
+	private HashTableCH<String, Media> table;
+    private InputStream path;
 
     public DummyMediaService(String path) {
-	    System.out.println(getClass().getClassLoader().getResource(path));
-	    this.path = getClass().getClassLoader().getResource(path).getPath();
+	    // TODO: 2016-03-12 :18:36 Here i want to print path of media
+	    this.path = getClass().getResourceAsStream("/"+path);
     }
 
     @Override
-    public void loadMedia() throws IOException {
-        System.out.println(path);
+    public void loadMedia() throws IOException, URISyntaxException {
         loadMedia(path);
     }
 
@@ -36,14 +33,20 @@ public class DummyMediaService implements IMediaService {
      * @param path path to the file containing all media objects
      * @return A HashTableCH containing all Media objects
      */
-    private HashTableCH<String, Media> loadMedia(String path) throws IOException {
+    private HashTableCH<String, Media> loadMedia(InputStream path) throws IOException, URISyntaxException {
         String line;
         String[] object;
         String[] actors;
         Media media;
-        table = new HashTableCH<>();
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(path)));
-        while ((line = bufferedReader.readLine()) != null) {
+
+	    table = new HashTableCH<>();
+	    BufferedReader bufferedReader = null;
+	    try {
+		    bufferedReader = new BufferedReader(new InputStreamReader(path));
+	    } catch (Exception e) {
+		    throw new FileNotFoundException("Couldnt find MediaSerivce File");
+	    }
+	    while ((line = bufferedReader.readLine()) != null) {
             object = line.split(";");
             if (object[0].equals("Bok")) {
                 media = new Book(object[1], object[2], object[3], object[4]);

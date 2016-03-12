@@ -10,16 +10,14 @@ import java.io.*;
  */
 public class MediaService implements IMediaService {
     private HashTableCH<String, Media> table;
-    private String path;
+    private InputStream path;
 
     public MediaService(String path) {
-	    System.out.println(getClass().getClassLoader().getResource(path));
-	    this.path = getClass().getClassLoader().getResource(path).getPath();
+	    this.path = getClass().getResourceAsStream("/"+path);
     }
 
     @Override
     public void loadMedia() throws IOException {
-        System.out.println(path);
         loadMedia(path);
     }
 
@@ -29,13 +27,20 @@ public class MediaService implements IMediaService {
      * @param path path to the file containing all media objects
      * @return A HashTableCH containing all Media objects
      */
-    private HashTableCH<String, Media> loadMedia(String path) throws IOException {
+    private HashTableCH<String, Media> loadMedia(InputStream path) throws IOException {
         String line;
         String[] object;
         String[] actors;
         Media media;
         table = new HashTableCH<>();
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(path)));
+
+	    BufferedReader bufferedReader;
+	    try {
+		    bufferedReader = new BufferedReader(new InputStreamReader(path));
+	    } catch (Exception e) {
+		    throw new FileNotFoundException("Couldnt find MediaSerivce File");
+	    }
+
         while ((line = bufferedReader.readLine()) != null) {
             object = line.split(";");
             if (object[0].equals("Bok")) {

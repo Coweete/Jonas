@@ -94,6 +94,8 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         JLabel lblText = new JLabel(label);
 	    JScrollPane spText = new JScrollPane(txtList);
 
+	    panel.setPreferredSize(new Dimension(200, 100));
+
         spText.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         panel.setLayout(new BorderLayout());
         TitledBorder border = new TitledBorder(BorderFactory.createLineBorder(Color.black), borderString);
