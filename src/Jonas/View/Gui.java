@@ -19,6 +19,7 @@ import java.util.Arrays;
  *         This is the class containing all Graphical components
  */
 public class Gui extends JFrame implements ActionListener, IGUI {
+
     private String currentUser;
     private IController ctrl;
     private JPanel mainPanelBasic = new JPanel();
@@ -31,6 +32,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
      * Initializes all graphical components.
      */
     public Gui() {
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(false);
         setLayout(new BorderLayout());
@@ -68,7 +70,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         JPanel panelButton = new JPanel();
         JPanel panelLabel = new JPanel();
         JLabel label = new JLabel(labelInfo);
-
         panelButton.add(button);
         panelLabel.add(label);
 
@@ -89,7 +90,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
      * @return the actual panel
      */
     public JPanel panelList(String label, JTextArea txtList, String borderString) {
-
         JPanel panel = new JPanel();
         JLabel lblText = new JLabel(label);
 	    JScrollPane spText = new JScrollPane(txtList);
@@ -128,7 +128,6 @@ public class Gui extends JFrame implements ActionListener, IGUI {
 
     @Override
     public void updateMemberServiceFromView() {
-
         ctrl.getMemberService().setCurrentUserID(currentUser);
     }
 
