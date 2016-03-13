@@ -1,6 +1,7 @@
 package Jonas;
 
 import Jonas.Controller.Controller;
+import Jonas.Controller.IController;
 import Jonas.Model.IMediaService;
 import Jonas.Model.IMemberService;
 import Jonas.Model.MediaService;
@@ -25,7 +26,7 @@ public class AppMain {
 				IMediaService IMediaService = new MediaService("files/Media.txt");
 				IMemberService memberService = new MemberService("files/Lantagare.txt");
 
-				Controller controller = new Controller();
+				IController controller = new Controller();
 				controller.setMediaService(IMediaService);
 				controller.setMemberService(memberService);
 
