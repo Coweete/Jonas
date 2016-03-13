@@ -39,6 +39,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         mainPanelBasic.setLayout(new GridLayout(3, 0, 0, 10));
         textFieldUser.setEditable(false);
 	    textFieldUser.setBorder(new EmptyBorder(0, 10, 10, 0));
+        textArea.setEditable(false);
 
         changeUser.addActionListener(this);
         borrow.addActionListener(this);
