@@ -25,7 +25,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
     private JPanel mainPanelBasic = new JPanel();
     private JTextArea textArea = new JTextArea();
     private JButton changeUser = new JButton("Byta användare"), borrow = new JButton("Låna media"), returnBook = new JButton("Lämna tillbaka");
-    private JTextField textFieldUser = new JTextField(30), textFieldBorrow = new JTextField(30), textFieldReturn = new JTextField(30);
+    private JTextField textFieldUser = new JTextField(50), textFieldBorrow = new JTextField(50), textFieldReturn = new JTextField(50);
 
     /**
      * Constructor.
