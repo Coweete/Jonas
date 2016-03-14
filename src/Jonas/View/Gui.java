@@ -50,7 +50,7 @@ public class Gui extends JFrame implements ActionListener, IGUI {
         mainPanelBasic.add(basicJPanel("Media ID", textFieldReturn, returnBook, "Lämna tillbaka"));
         mainPanelBasic.setBorder(new EmptyBorder(0,0,10,0));
 
-        add(panelList("Media", textArea, "Lista av media objekt"), BorderLayout.CENTER);
+        add(panelList("Media", textArea, "Lista av lånade media objekt"), BorderLayout.CENTER);
         add(mainPanelBasic, BorderLayout.NORTH);
 
 	    this.setResizable(false);

@@ -8,8 +8,9 @@ import collections.List;
 import java.io.*;
 
 /**
+ * Dummy class for testing
  * Reads a text file and places the nodes in a BinarySearchTree
- * @author Robin Johnsson
+ * @author Robin Johnsson, Sebastian Boreback
  */
 public class DummyMemberService implements IMemberService {
     private BinarySearchTree<String, Member> memberTree;

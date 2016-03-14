@@ -1,7 +1,8 @@
 package Jonas.Model;
 
 /**
- * @author
+ * A model of a Book
+ * @author Anton
  */
 public class Book extends Media {
 	private String author;

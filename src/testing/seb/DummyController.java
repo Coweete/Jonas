@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 /***
+ * Dummy controller for testing the Gui.
+ * Logs the user in at start and show a DummyMediaService
+ * so you get in from console quick the mediaID
  * Controller that handles the communication between Model/service and the View
  *
  * @author Sebastian Boreback
@@ -140,7 +143,7 @@ public class DummyController implements IController {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
 			public void run() {
-				IMediaService IMediaService = new MediaService("files/Media.txt");
+				IMediaService IMediaService = new DummyMediaService("files/Media.txt");
 				IMemberService memberService = new MemberService("files/Lantagare.txt");
 
 				DummyController controller = new DummyController();

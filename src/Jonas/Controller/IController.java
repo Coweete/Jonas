@@ -65,11 +65,13 @@ public interface IController {
 
 	/**
 	 * Borrow book
+	 * @param mediaID the mediaID for the media we are borrowing
 	 */
 	void borrow(String mediaID);
 
 	/**
 	 * Return book
+	 * @param mediaID for the media we are returning
 	 */
 	void returnMedia(String mediaID);
 }

@@ -3,7 +3,8 @@ package Jonas.View;
 import Jonas.Controller.IController;
 
 /**
- * @author Sebastian Borreback, ... 2016-03-10.
+ * interface of the Gui
+ * @author Jonatan Fridsten, Johnatan Sona, Gustaf Bohlin
  */
 public interface IGUI {
 	/**

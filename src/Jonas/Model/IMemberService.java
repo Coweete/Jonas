@@ -14,6 +14,8 @@ public interface IMemberService {
     /**
      * Calls the private method "loadMember(String path)"
      * Reads from file and places data in a BST
+     * @throws NullPointerException when files is not found
+     * @throws IOException when files is not found
      **/
     void loadMember() throws IOException;
 
@@ -32,11 +34,14 @@ public interface IMemberService {
     /**
      * Checks if the current user is in the the list of registered users
      * @return true/false depending if the user exists
+     * @throws NullPointerException when file is not found
      **/
     boolean userExists() throws NullPointerException;
 
     /**
+     *
      * Fetches a specified member through the use of CurrentUserID
+     * @return the Current Member object
      **/
     public Member getCurrentUser();
 

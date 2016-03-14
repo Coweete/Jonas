@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 /**
- * Created by seb on 2016-03-11.
+ * Interface representation of MediaSerivce
+ * @author Gustaf
  */
 public interface IMediaService {
 	/**
 	 * Loads the Hashtable with the media objects
-	 * @throws IOException
+	 * @throws IOException when file is not found
+	 * @throws NullPointerException when file is not found
      */
 	void loadMedia() throws IOException, URISyntaxException;
 

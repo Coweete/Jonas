@@ -17,6 +17,7 @@ public interface SearchTree<K,V> {
     /**
      * Removes the key and its value from the tree
      * @param key the key to be removed
+     * @return the removed object
      **/
     public V remove(K key);
 

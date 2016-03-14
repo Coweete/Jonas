@@ -1,5 +1,9 @@
 package Jonas.Model;
 
+/**
+ * A model of a DVD
+ * @author Anton
+ */
 public class DVD extends Media {
 	private String[] actors;
 

@@ -10,7 +10,8 @@ import java.io.*;
 import java.net.URISyntaxException;
 
 /**
- * @author Gustaf Bohlin
+ * Dummy Class for testing.
+ * @author Gustaf Bohlin, Sebastian Boreback
  *         This class reads the Media objects from a text file and fills a Hashtable with them
  */
 public class DummyMediaService implements IMediaService {

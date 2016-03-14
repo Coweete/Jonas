@@ -1,6 +1,10 @@
 package Jonas.Model;
 
 
+/**
+ * Model representing the Media.
+ * @author Anton
+ */
 public abstract class Media {
 	private String mediaID;
 	private String title;

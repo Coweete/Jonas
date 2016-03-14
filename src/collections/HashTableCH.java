@@ -161,6 +161,7 @@ public class HashTableCH<K,V> {
 
     /**
      * Returns true/false if the given key exists in the HashTable
+     * @param key key we are looking for
      * @return true/false
      **/
     public boolean containsKey(K key) {
@@ -179,6 +180,7 @@ public class HashTableCH<K,V> {
 
     /**
      * Returns a ArrayList of the values contained in the HashTable
+     * @return the values in the hashtable
      **/
     public Iterator<V> values() {
         ArrayList<V> values = new ArrayList<>();
