@@ -7,8 +7,8 @@ som är våran main metod eller buckets. BSt nod?
 - [ ] Interface
 
 ## att göra
-- [ ] Skriva Objekt Diagram
+- [x] Skriva Objekt Diagram
 - [ ] Skanna in CRC korten
-- [ ] Kommentera klasserna
-- [ ] Fixa togehter klass diagram & Sekvensdiagram
-- [ ] skriva inlamningsdokumentet
+- [x] Kommentera klasserna
+- [x] Fixa togehter klass diagram & Sekvensdiagram
+- [x] skriva inlamningsdokumentet
