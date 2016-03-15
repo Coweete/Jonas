@@ -69,9 +69,6 @@ public class Controller implements IController {
 	@Override
 	public void login() {
 		gui.updateMemberServiceFromView();
-		// TODO Just for testing
-		//memberService.setCurrentUserID("681102-9999");
-
 		try {
 			if (memberService.userExists()) {
 				gui.closeLogin();
