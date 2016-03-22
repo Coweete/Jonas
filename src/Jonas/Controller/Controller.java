@@ -120,8 +120,13 @@ public class Controller implements IController {
 			return;
 		}
 		if (media.isBorrowed()) {
-			memberService.getCurrentUser().returnMedia(media);
-			media.setBorrowed(false);
+			try {
+				memberService.getCurrentUser().returnMedia(media);
+				media.setBorrowed(false);
+
+			} catch (NullPointerException e) {
+				gui.showErrorMessage("Du har inte lånat boken");
+			}
 		} else {
 			gui.showMessage("Bok är inte utlånad");
 		}
